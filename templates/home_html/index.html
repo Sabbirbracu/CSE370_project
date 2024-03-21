@@ -63,29 +63,69 @@
         <div class="form-box register">
             <h2>Registration</h2>
             <form action="">
-                <!--  -->
+                <!-- Full name input -->
                 <div class="input-box">
                     <span class="icon"><ion-icon name="person"></ion-icon></span>
-                    <input type="text" class="username" name="username" required>
-                    <label>Username</label>
+                    <input type="text" class="name" name="name" required>
+                    <label>Full Name</label>
                 </div>
 
+                <!-- Email input -->
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
                     <input type="text" class="email" name="email" required>
                     <label>Email</label>
                 </div>
 
+                <!-- USER NID input -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="number" class="nid" name="nid" required>
+                    <label>NID</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="home"></ion-icon></span>
+                    <input type="text" class="address" name="address" required>
+                    <label>Address</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="people"></ion-icon></span>
+                    <select id="gender" name="gender">
+                        <option value="">Select gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                      </select>
+                    <label>Gender</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <select id="gender" name="gender">
+                        <option value="">User Type</option>
+                        <option value="Rider">Rider</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Employee">Employee</option>
+                      </select>
+                    <label>Sign-up As</label>
+                </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                     <input type="password" class="password" name="password" required>
                     <label>Password</label>
                 </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" class="password" name="password" required>
+                    <label>Confirm Password</label>
+                </div>
 
                 <div class="remember-forgot">
                     <label><input type="checkbox">I agree the terms & conditions</label>
-
                 </div>
+
                 <button type="submit" class="btn">Register</button>
                 
                 <div class="login-register">
