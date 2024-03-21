@@ -99,9 +99,9 @@ header{
 
 }
 
-
+/* Having problem. Have to solve. When register to login having overflow problem */
 .wrapper {
-    position: relative;
+    position:static;
     width: 400px;
     height: 440px;
     background:transparent;
@@ -112,7 +112,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow:auto;
     transition: transform .5s ease,height .2s ease;
     transform: scale(0);
 
@@ -126,11 +126,13 @@ header{
 /* This is for registration pop up */
 
 .wrapper.active{
-    height: 520px;
-    width: 600px;
+    
+    margin-top: 50px;
+    height: 550px;
+    width: 400px;
     /* padding-top: 40px; */
     display: flex;
-    position: relative;
+    overflow: auto;
 
 }
 
@@ -158,6 +160,7 @@ header{
 }
 
 .wrapper.active .form-box.register{
+    overflow: auto;
     transition: transform .18s ease;
     transform: translateX(0);
 }
@@ -187,6 +190,11 @@ header{
     text-align: center;
 }
 
+.wrapper.active .form-box h2{
+    margin-top: 130px;
+    margin-bottom:20px;
+}
+
 .input-box{
     position: relative;
     width: 100%;
@@ -194,6 +202,29 @@ header{
     border-bottom: 2px solid darkgray;
     margin: 30px 0;
 }
+
+.wrapper.active .input-box{
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+    
+}
+
+.wrapper.active .input-box select{
+    position: relative;
+    background: transparent;
+    color: rgb(226, 227, 177);
+    margin-top: 17px;
+    margin-left: 170px;
+    border-radius: 10px;
+    border-top-color: rgb(174, 226, 123);
+    border-bottom-color:darkgoldenrod;
+    border-left-color: #114805;
+    border-right-color: blue;
+    border-width: 2.5px;
+
+}
+
 
 .input-box label{
     position: absolute;
@@ -207,9 +238,19 @@ header{
     transition: 0.5s;
 }
 
+.wrapper.active .input-box label{
+    font-size: 0.9em;
+}
+
+
 .input-box input:focus~label,
 .input-box input:valid~label{
     top: -5px;
+}
+
+.wrapper.active .input-box input:focus~label,
+.wrapper.active .input:valid~label{
+    top: 0px;
 }
 
 .input-box input{
@@ -244,9 +285,13 @@ header{
 
 }
 
+.wrapper.active .remember-forgot{
+    margin-top: 16px;
+}
+
 .remember-forgot label input{
     accent-color: rgb(7, 7, 13);
-    margin-right: 3px;
+    margin-right: 5px;
 }
 
 .remember-forgot a{
