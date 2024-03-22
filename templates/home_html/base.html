@@ -14,13 +14,16 @@
     <header>
         <h2 class="logo">EasyMove</h2>
         <nav class="navigation">
+            
+            {%if page == "index"%}
+            <button class="btnLogin-popup">Login / Sign-up</button>
+            {%else%}
             <a href="/">Home</a>
             <a href="#">About</a>
             <a href="#">Station</a>
             <a href="#">dashboard</a>
             <a href="#">Contact</a>
-            {%if page == "index"%}
-            <button class="btnLogin-popup">Login / Sign-up</button>
+
             {%endif%}
         </nav>
     </header>
