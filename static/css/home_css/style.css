@@ -237,3 +237,33 @@
     text-decoration: underline;
 
 }
+
+
+.heading {
+    backdrop-filter: blur(1px);
+    color: #fff;
+     display: flex;
+     align-items: center;
+     height: 30vh;
+     text-align: center;
+     justify-content: space-between;
+     transform: translateX(0);
+     margin-left: 270px;
+
+ 
+ 
+ }
+ 
+ 
+ .heading .display-2{
+    margin-bottom: 230px;
+    font-weight: 600;
+    font-size: 4em;
+ }
+ 
+ 
+ .heading.head-popup{
+    display: none;
+    transition: none;
+    transform: translateX(-600px);
+ } 
