@@ -3,6 +3,7 @@ const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
 const btnPopup = document.querySelector('.btnLogin-popup');
 const iconClose = document.querySelector('.icon-close');
+const head = document.querySelector('.heading');
 
 registerLink.addEventListener('click',()=>{
     wrapper.classList.add('active');
@@ -16,6 +17,14 @@ btnPopup.addEventListener('click',()=>{
     wrapper.classList.add('active-popup');
 });
 
+btnPopup.addEventListener('click',()=>{
+    head.classList.add('head-popup');
+});
+
 iconClose.addEventListener('click',()=>{
     wrapper.classList.remove('active-popup');
+});
+
+iconClose.addEventListener('click',()=>{
+    head.classList.remove('head-popup');
 });

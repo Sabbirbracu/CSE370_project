@@ -2,4 +2,9 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(requests):
-    return render(requests,'home_html/index.html')
+    page = "index"
+    return render(requests,'home_html/index.html',{'page':page})
+
+def base(requests):
+    page="base"
+    return render(requests,'home_html/base.html',{'page':page})
