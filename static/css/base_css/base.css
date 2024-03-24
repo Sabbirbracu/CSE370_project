@@ -116,8 +116,6 @@ header{
 }
 
 
-
-
 /* for profile navbar */
 
 .profile-dropdown {
@@ -179,8 +177,8 @@ header{
   
   .profile-dropdown-list {
     position: absolute;
-    top: 68px;
-    width: 250px;
+    top: 55px;
+    width: 220px;
     right: 0;
     background-color: var(--white);
     border-radius: 10px;
