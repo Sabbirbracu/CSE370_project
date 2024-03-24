@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyMove{%block title%}{%endblock title%}</title>
     <link rel="stylesheet" href="/static/css/base_css/base.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
     {%block link%}{%endblock link%}
 </head>
 {%endblock head%}
@@ -14,24 +18,87 @@
     <header>
         <h2 class="logo">EasyMove</h2>
         <nav class="navigation">
-            
-            {%if page == "index"%}
-            <button class="btnLogin-popup">Login / Sign-up</button>
-            {%else%}
-            <a href="/">Home</a>
-            <a href="#">About</a>
-            <a href="#">Station</a>
-            <a href="#">dashboard</a>
-            <a href="#">Contact</a>
 
+            {%if page == "index"%}
+            <button class="btnLogin-popup">Login</button>
+            {%else%}
+            <a href="/dashboard">Dashboard</a>
+            <a href="#">Station</a>
+            <a href="#">Contact</a>
             {%endif%}
         </nav>
+
+
+        <!-- Except index or home.html page it will show for all the pages -->
+        {%if page != "index"%}
+        <div class="profile-dropdown">
+            <div onclick="toggle()" class="profile-dropdown-btn">
+              <div class="profile-img">
+                <i class="fa-solid fa-circle"></i>
+              </div>
+    
+              <span
+                >Sabbir
+                <i class="fa-solid fa-angle-down"></i>
+              </span>
+            </div>
+    
+            <ul class="profile-dropdown-list">
+              <li class="profile-dropdown-list-item">
+                <a href="#">
+                  <i class="fa-regular fa-user"></i>
+                  View Profile
+                </a>
+              </li>
+    
+              <li class="profile-dropdown-list-item">
+                <a href="#">
+                  <i class="fa-regular fa-edit"></i>
+                  Edit Profile
+                </a>
+              </li>
+
+              <li class="profile-dropdown-list-item">
+                <a href="#">
+                  <i class="fa-regular fa-coins"></i>
+                  Rewards
+                </a>
+              </li>
+    
+    
+              <li class="profile-dropdown-list-item">
+                <a href="#">
+                  <i class="fa-solid fa-sliders"></i>
+                  Settings
+                </a>
+              </li>
+    
+              <li class="profile-dropdown-list-item">
+                <a href="#">
+                  <i class="fa-regular fa-circle-question"></i>
+                  Help & Support
+                </a>
+              </li>
+              <hr />
+    
+              <li class="profile-dropdown-list-item">
+                <a href="#">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  Log out
+                </a>
+              </li>
+            </ul>
+          </div>
+          {%endif%}
+
+
     </header>
     <div class="overlay"></div>
 
     {%block body%}{%endblock body%}
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="/static/js/Base_js/scripts.js"></script>
 
 </body>
 </html>
