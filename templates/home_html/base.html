@@ -30,7 +30,7 @@
 
 
         <!-- Except index or home.html page it will show for all the pages -->
-        {%if page != "index"%}
+        {%if page != "index" and page != "login" and page != "register"%}
         <div class="profile-dropdown">
             <div onclick="toggle()" class="profile-dropdown-btn">
               <div class="profile-img">
@@ -102,7 +102,7 @@
           window.location.href = "/login";
       }
   </script>
-  
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="/static/js/Base_js/scripts.js"></script>

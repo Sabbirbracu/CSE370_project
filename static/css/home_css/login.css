@@ -68,25 +68,32 @@ html{
 }
 
 .forgot_pass{
+    margin-top: 15px;
+    margin-left: 18px;
+    margin-bottom: -15px;
+}
+
+.forgot_pass.forgot_pass{
     font-size: 0.9rem;
-    color: #050d1b;
-    float: right;
-    font-weight: 500;
+    color: #5dc6e6;
+    font-weight: 600;
 
 }
 
+.forgot_pass.forgot_pass:hover{
+    color: #111d65;
+}
 .btn_submit{
     position: relative;
     display: inline-block;
     padding: 10px 20px;
     color: #03e9f4;
-    font-size: 13px;
+    font-size: 0.9rem;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
     transform: 0.5s;
-    margin-top: 20px;
     letter-spacing: 4px;
 }
 
@@ -185,4 +192,25 @@ html{
     100%{
         bottom: 100%;
     }
+}
+
+.box-bottom{
+    margin-top: 10px;
+}
+
+.box-bottom span{
+    font-size: 0.9rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.box-bottom .register{
+    color: rgb(10, 10, 86);
+    font-size: 0.9rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.box-bottom .register:hover{
+    color: rgb(99, 194, 220);
 }

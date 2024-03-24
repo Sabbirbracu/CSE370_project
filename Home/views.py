@@ -7,7 +7,7 @@ def index(requests):
 
 def login(requests):
     page = "login"
-    return render(requests,'home_html/login.html')
+    return render(requests,'home_html/login.html',{'page':page})
 
 def base(requests):
     page="base"
