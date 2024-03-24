@@ -51,7 +51,8 @@
 
         <div class="form-box register">
             <h2>Registration</h2>
-            <form action="">
+            <form method="POST" action="">
+                {%csrf_token%}
                 <!-- Full name input -->
                 <div class="input-box">
                     <span class="icon"><ion-icon name="person"></ion-icon></span>
