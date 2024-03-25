@@ -13,7 +13,6 @@ def base(requests):
     page="base"
     return render(requests,'home_html/base.html',{'page':page})
 
-
 def register(requests):
     page = "register"
     return render(requests,'home_html/register.html',{'page':page})
