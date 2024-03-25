@@ -1,0 +1,91 @@
+{%extends 'home_html/base.html'%}
+{%block title%}Home{%endblock title%}
+{%block link%}
+<link rel="stylesheet" href="/static/css/home_css/register.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+{%endblock link%}
+
+{%block body%}
+<div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+        <form action="#">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">First Name</span>
+                    <input type="text" placeholder="Enter your First name" name="f_name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Last name</span>
+                    <input type="text" placeholder="Enter your Last name" name="l_name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="text" placeholder="Enter your email" name="email" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input type="text" placeholder="Enter your number" name="phone" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Address</span>
+                    <input type="text" placeholder="Enter your mailing Address" name="address" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">NID</span>
+                    <input type="text" placeholder="Enter your NID Number" name="nid" required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="text" placeholder="Enter your password" name="pass1" required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Confirm Password</span>
+                    <input type="text" placeholder="Confirm your password" name="pass2" required>
+                </div>
+            </div>
+
+
+            <div class="others_info">
+                <div class="gender-details">
+                    <input type="radio" name="gender" id="dot-1">
+                    <input type="radio" name="gender" id="dot-2">
+                    <span class="gender-title">Gender</span>
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="gender">Male</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender">Female</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Join Date</span>
+                    <input type="date" placeholder="Enter your password" name="date" required>
+                </div>
+
+            </div>
+
+
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+
+            <div class="box-bottom">
+                <span>Already have an account?</span>
+                <a href="login" class="register">Login</a>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
+{%endblock body%}
