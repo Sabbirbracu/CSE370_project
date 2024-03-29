@@ -201,6 +201,55 @@ form .others_info .input-box input{
   transition: all 0.3s ease;
 }
 
+form .others_info .gender-details .gender{
+  color: #322828;
+}
+
+form .others_info .gender-details .category {
+  background: #fff;
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #f89c9c;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+
+}
+
+form .others_info .gender-details .category .label{
+  display: flex; 
+  align-items: center;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+form .employee_type{
+  width: 500px;
+  margin-top: 40px;
+  
+}
+
+form .employee_type label{
+  color: #52257e;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-right: 15px;
+}
+form .employee_type select{
+  height: 45px;
+  width: 35%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #f89c9c;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
 ::-webkit-calendar-picker-indicator{
   background-color: #ffffff;
   padding: 5px;

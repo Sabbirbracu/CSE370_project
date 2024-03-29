@@ -2,4 +2,5 @@ from django.shortcuts import render
 
 # Create your views here.
 def dashboard(requests):
-    return render(requests,'Dashboard/dashboard.html')
+    page = "dashboard"
+    return render(requests,'Dashboard/dashboard.html',{'page':page})
