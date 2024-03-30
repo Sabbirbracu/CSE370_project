@@ -8,17 +8,29 @@
 
 {%block body%}
 <div class="container">
+
+    <!-- {% if form.errors %}
+    <ul class="errorlist">
+        {% for field in form %}
+            {% for error in field.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+    {% endif %} -->
+
     <div class="title">Registration</div>
     <div class="content">
-        <form action="#">
+        <form action="/register" method="POST">
+            {%csrf_token%}
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">First Name</span>
-                    <input type="text" placeholder="Enter your First name" name="f_name" required>
+                    <input type="text" placeholder="Enter your First name" name="first_name" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Last name</span>
-                    <input type="text" placeholder="Enter your Last name" name="l_name" required>
+                    <input type="text" placeholder="Enter your Last name" name="last_name" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Email</span>
@@ -39,20 +51,20 @@
 
                 <div class="input-box">
                     <span class="details">Password</span>
-                    <input type="text" placeholder="Enter your password" name="pass1" required>
+                    <input type="password" placeholder="Enter your password" name="password1" required>
                 </div>
 
                 <div class="input-box">
                     <span class="details">Confirm Password</span>
-                    <input type="text" placeholder="Confirm your password" name="pass2" required>
+                    <input type="password" placeholder="Confirm your password" name="password2" required>
                 </div>
             </div>
 
 
             <div class="others_info">
                 <div class="gender-details">
-                    <input type="radio" name="gender" id="dot-1">
-                    <input type="radio" name="gender" id="dot-2">
+                    <input type="radio" name="gender" id="dot-1" value="male">
+                    <input type="radio" name="gender" id="dot-2" value="female">
                     <span class="gender-title">Gender</span>
                     <div class="category">
                         <label for="dot-1">
@@ -75,10 +87,10 @@
 
             <div class="employee_type">
                 <label for="E_type">Sign-up as</label>
-                <select name="e_type" id="e_type">
-                    <option>Select Type</option>
-                    <option value="Rider">Rider</option>
-                    <option value="Admin">Admin</option>
+                <select name="user_type" id="e_type">
+                    <option value="none">Select Type</option>
+                    <option value="rider">Rider</option>
+                    <option value="admin">Admin</option>
                 </select> 
             </div>
 
