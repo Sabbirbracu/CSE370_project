@@ -1,6 +1,8 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm
+from django.contrib import messages
+
 
 # Create your views here.
 def index(requests):
@@ -22,15 +24,12 @@ def base(requests):
 
 def register(request):
     if request.method == 'POST':
-        print(request.POST)
-        print("user Type:",request.POST.get('user_type'))
         form = CustomUserCreationForm(request.POST)
-        print([i for i in form.errors])
-        print(form.errors)
         if form.is_valid():
-            print("ok")
             form.save()
-            return redirect('/')  # Redirect to login page after successful registration
+            messages.success(request,"You have succefully registerd")
+            return redirect('login')  # Redirect to login page after successful registration
+        
     else:
         form = CustomUserCreationForm()
     page = "register"
