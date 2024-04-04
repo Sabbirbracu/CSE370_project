@@ -44,5 +44,12 @@ class CustomUser(AbstractUser):
         related_name='custom_user_permissions'
     )
 
+    email = models.EmailField(unique=True)  # Define email as a unique field
+
+    # Remove 'email' from REQUIRED_FIELDS since it's already set as USERNAME_FIELD
+    REQUIRED_FIELDS = []
+
+    USERNAME_FIELD = 'email'  # Set the email as the unique identifier for authentication
+
     def __str__(self):
         return self.username
