@@ -4,7 +4,7 @@ from django.utils.translation import gettext_lazy as _
 
 class CustomUser(AbstractUser):
 
-
+    
     User_type =[
         ('none','Select Type'),
         ('Rider','Rider'),
@@ -18,18 +18,7 @@ class CustomUser(AbstractUser):
     nid = models.CharField(max_length=20)
     # user_type = models.CharField(max_length=10, choices=[('none','Select Type'),('Rider', 'rider'),('Admin', 'admin')])
     # Alternative way to do this
-
     user_type = models.CharField(max_length=10, choices=User_type, default="none")
-    # Add unique related_name arguments for groups and user_permissions
-
-    # join_date = models.DateField(verbose_name=_('join date'))
-
-
-    # def save(self, *args, **kwargs):
-    #     if not self.pk: 
-    #         self.join_date = self.date_joined.date()
-    #     super().save(*args, **kwargs)
-
 
     groups = models.ManyToManyField(
         Group,
@@ -53,3 +42,5 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.username
+
+

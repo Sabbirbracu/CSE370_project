@@ -95,12 +95,28 @@ html{
     overflow: hidden;
     transform: 0.5s;
     letter-spacing: 4px;
+    margin-left: 37px;
 }
 
-.btn_submit:hover{
+.btn_submit input{
+    letter-spacing: 4px;
+    background: transparent;
+    width: 100px;
+    color: #36e7f7;
+    height: 37px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 9px;
+
+}
+
+.btn_submit input:hover{
     background: #03e9f4;
     color: rgb(10,11,21);
     border-radius: 5px;
+    font-size: 1rem;
+    border-radius: 9px;
+
 
 }
 

@@ -57,6 +57,13 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
             {% endif %}
+
+            {% if message.tags == 'success' %}
+              <div class="alert alert-warning" role="alert">
+                <strong>{{ message }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endif %}
           {% endfor %}
         {% endif %}
 
@@ -66,11 +73,17 @@
         {%if page != "index" and page != "login" and page != "register"%}
         <div class="profile-dropdown">
             <div onclick="toggle()" class="profile-dropdown-btn">
-              <div class="profile-img">
+              {%if user.gender == 'male'%}
+              <div class="male-profile-img">
                 <i class="fa-solid fa-circle"></i>
               </div>
+              {%else%}
+              <div class="female-profile-img">
+                <i class="fa-solid fa-circle"></i>
+              </div>
+              {%endif%}
     
-              <span>Sabbir
+              <span>{{user.first_name}}
                 <i class="fa-solid fa-angle-down"></i>
               </span>
             </div>
@@ -114,7 +127,7 @@
               <hr />
     
               <li class="profile-dropdown-list-item">
-                <a href="#">
+                <a href="logout">
                   <i class="fa-solid fa-arrow-right-from-bracket"></i>
                   Log out
                 </a>
