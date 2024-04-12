@@ -132,3 +132,13 @@ STATICFILES_DIRS =[
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# Inside settings.py
+
+AUTH_USER_MODEL = 'Home.CustomUser'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'sabbirahmad653@gmail.com'
+EMAIL_HOST_PASSWORD = 'asru lyse pxzq sckw'

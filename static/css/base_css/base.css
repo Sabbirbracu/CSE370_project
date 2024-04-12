@@ -121,6 +121,7 @@ header{
 .profile-dropdown {
     position: relative;
     width: relative;
+    /* width: 50px; */
     /* display: flex;
     width: 130px; */
 
@@ -133,7 +134,7 @@ header{
     padding-right: 1.5rem;
     font-size: 1rem;
     font-weight: 700;
-    width: 150px;
+    width: 190px;
     border-radius: 50px;
     color: #fefdfd;
     /* background-color: white;
@@ -152,16 +153,34 @@ header{
     color: #fff;
   }
   
-  .profile-img {
+  .male-profile-img {
     position: relative;
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 50%;
-    background: url(/static/images/dashboard_img/u1.jpg);
+    background: url(/static/images/home_img/male.png);
     background-size: cover;
   }
   
-  .profile-img i {
+  .female-profile-img {
+    position: relative;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: url(/static/images/home_img/female.png);
+    background-size: cover;
+  }
+  
+
+  .male-profile-img i {
+    position: absolute;
+    right: 0;
+    bottom: 0.3rem;
+    font-size: 0.5rem;
+    color: #bceb22;
+  }
+
+  .female-profile-img i {
     position: absolute;
     right: 0;
     bottom: 0.3rem;
