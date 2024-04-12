@@ -4,7 +4,6 @@ from django.utils.translation import gettext_lazy as _
 
 class CustomUser(AbstractUser):
 
-    
     User_type =[
         ('none','Select Type'),
         ('Rider','Rider'),
@@ -16,6 +15,7 @@ class CustomUser(AbstractUser):
     phone = models.CharField(max_length=15)
     gender = models.CharField(max_length=10)
     nid = models.CharField(max_length=20)
+
     # user_type = models.CharField(max_length=10, choices=[('none','Select Type'),('Rider', 'rider'),('Admin', 'admin')])
     # Alternative way to do this
     user_type = models.CharField(max_length=10, choices=User_type, default="none")
