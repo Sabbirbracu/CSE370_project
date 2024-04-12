@@ -17,8 +17,8 @@ def login_view(requests):
 
         if user is not None:
             login(requests, user)
-            u_mail = CustomUser.objects.raw("SELECT username, first_name FROM Home_customuser")
-            print(u_mail)
+            # u_mail = CustomUser.objects.raw("SELECT username, first_name FROM Home_customuser")
+            # print(u_mail)
             return redirect('dashboard')
         
         else:
