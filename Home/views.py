@@ -4,7 +4,6 @@ from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm
 from django.contrib import messages
 from .models import CustomUser
-from django.db import connection
 
 def index(requests):
     page = "index"
@@ -15,17 +14,13 @@ def login_view(requests):
         email = requests.POST.get('email')
         password = requests.POST.get('password')
         user = authenticate(requests, email=email, password=password)
+
         if user is not None:
             login(requests, user)
             u_mail = CustomUser.objects.raw("SELECT username, first_name FROM Home_customuser")
             print(u_mail)
-
-            # with connection.cursor() as cursor:
-            #     cursor.execute("SELECT username, first_name FROM Home_customuser")
-            #     rows = cursor.fetchall()
-            #     print(rows)
-            # Redirect to the dashboard or any other desired page
             return redirect('dashboard')
+        
         else:
             # Invalid credentials, show an error message
             messages.error(requests, 'Invalid email or password.')
@@ -47,17 +42,20 @@ def base(requests):
 CustomUser = get_user_model()
 def register(request):
     if request.method == 'POST':
+
+        # Checking wheter NID is valid or Not
+        nid = request.POST.get('nid')
+        for i in nid:
+            if 48 <= ord(i) <= 57:
+                pass
+            else:
+                messages.error(request,"Opps! You have entered invalid NID")
+                return redirect('register')
+                
         form = CustomUserCreationForm(request.POST)
         print(form.errors)
         if form.is_valid():
-            # email = form.cleaned_data['email']
-            # # Check if the email already exists
-            print(messages)
-            # if CustomUser.objects.filter(email=email).exists():
-            #     messages.error(request, 'This email is already registered.Try another email or LogIn')
-                
-            #     return redirect('register')
-            # else:
+
             form.save()
             messages.success(request,"You have succefully registerd")
             return redirect('login')  # Redirect to login page after successful registration
@@ -78,21 +76,9 @@ def register(request):
                 for error in errors:
                     print(error)
                     messages.error(request, f'{field.capitalize()}: {error}')
-                    return redirect('register')  # Redirect back to registration page with error messages
-            else:
-                messages.error(request, "An error occurred. Please try again.")
-
-            # Capture and display all errors
-            # for field, errors in form.errors.items():
-            #     if isinstance(errors, dict):
-            #         for subfield, suberrors in errors.items():
-            #             for suberror in suberrors:
-            #                 messages.error(request, f'{subfield.capitalize()}: {suberror}')
-            #     else:
-            #         for error in errors:
-            #             messages.error(request, f'{field.capitalize()}: {error}')
-            # return redirect('register')          
+                    return redirect('register')  # Redirect back to registration page with error messages         
     else:
         form = CustomUserCreationForm()
     page = "register"
     return render(request, 'home_html/register.html', {'page': page})
+
