@@ -1,0 +1,40 @@
+{%extends 'home_html/base.html'%}
+
+{%block title %}Payment{%endblock title%}
+
+{%block link%}
+<link rel="stylesheet" href="/static/css/payment_css/style.css">
+{%endblock link%}
+
+
+{%block body%}
+
+    <main class="table">
+        <section class="table_header">
+            <h1>Payment</h1>
+        </section>
+        <section class="table_body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Payment ID</th>
+                        <th>Cost/min</th>
+                        <th>Payment Date</th>
+                        <th>Total Amount</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>3000</td>
+                        <td>5 Taka</td>
+                        <td>11-01-2024</td>
+                        <td>130</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+{%endblock body%}

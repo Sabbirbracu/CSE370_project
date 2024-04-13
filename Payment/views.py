@@ -6,6 +6,5 @@ from django.views.decorators.cache import never_cache
 @login_required
 @never_cache
 
-def dashboard(requests):
-    page = "dashboard"
-    return render(requests,'Dashboard/dashboard.html',{'page':page})
+def payment(requests):
+    return render(requests,'payment_html/payment.html')

@@ -1,0 +1,15 @@
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.cache import never_cache
+from .models import Station
+
+
+@login_required
+@never_cache
+
+def station_function(requests):
+    stations = Station.objects.all()
+    context = {
+        'stations': stations
+    }
+    return render(requests,'station_html/station.html', context)

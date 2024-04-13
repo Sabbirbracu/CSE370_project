@@ -27,12 +27,17 @@
             <button class="btnLogin-popup" onclick="redirectToLoginPage()">Login</button>
 
             {%elif page == "dashboard"%}
-            <a href="#">Station</a>
+            <a href="/station">Station</a>
+            <a href="#">Contact</a>
+
+            {%elif page == "station"%}
+            <a href="/dashboard">Dashboard</a>
+            <a href="#">Ride</a>
             <a href="#">Contact</a>
 
             {%else%}
             <a href="/dashboard">Dashboard</a>
-            <a href="#">Station</a>
+            <a href="/station">Station</a>
             <a href="#">Contact</a>
             {%endif%}
         </nav>
@@ -57,7 +62,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
             {% endif %}
-
+            
             {% if message.tags == 'success' %}
               <div class="alert alert-warning" role="alert">
                 <strong>{{ message }}</strong>
