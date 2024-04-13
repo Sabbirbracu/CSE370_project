@@ -19,11 +19,19 @@ def login_view(requests):
             login(requests, user)
             u_mail = CustomUser.objects.raw("SELECT username, first_name FROM Home_customuser")
             print(u_mail)
-            return redirect('dashboard')
+            if user.user_type == "Admin":
+                print(user.user_type)
+                return redirect("admin_dashboard")
+            else:
+                print(user.user_type)
+                return redirect("dashboard")
+    
         
         else:
             # Invalid credentials, show an error message
             messages.error(requests, 'Invalid email or password.')
+
+    
     page = "login"
     return render(requests, 'home_html/login.html', {'page': page})
 

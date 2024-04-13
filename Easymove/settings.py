@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Home.apps.HomeConfig',
     'Dashboard.apps.DashboardConfig',
+    'adminpannel.apps.AdminpannelConfig',
 ]
 
 MIDDLEWARE = [
