@@ -1,40 +1,53 @@
-{%extends 'home_html/base.html'%}
+{% extends 'home_html/base.html' %}
 
-{%block title %}Payment{%endblock title%}
+{% block title %}Payment{% endblock title %}
 
-{%block link%}
-<link rel="stylesheet" href="/static/css/payment_css/style.css">
-{%endblock link%}
+{% block link %}
 
+<link rel="stylesheet" href="/static/css/payment_css/payment_style.css">
+{% endblock link %}
 
-{%block body%}
+{% block body %}
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-12">
+            <div class="card mx-auto">
+                <p class="heading">PAYMENT DETAILS</p>
+                <form class="card-details">
+                    <div class="form-group mb-0">
+                        <p class="text-warning mb-0">Card Number</p>
+                        <input type="text" name="card-num" placeholder="1234 5678 9012 3457" size="17" id="cno"
+                            minlength="19" maxlength="19">
+                    </div>
 
-    <main class="table">
-        <section class="table_header">
-            <h1>Payment</h1>
-        </section>
-        <section class="table_body">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Payment ID</th>
-                        <th>Cost/min</th>
-                        <th>Payment Date</th>
-                        <th>Total Amount</th>
-                    </tr>
-                </thead>
+                    <div class="form-group">
+                        <p class="text-warning mb-0">Cardholder's Name</p> 
+                        <div class="input-with-image">
+                            <input type="text" name="name" placeholder="Name" size="17">
+                        </div>
+                    </div>
 
-                <tbody>
-                    <tr>
-                        <td>3000</td>
-                        <td>5 Taka</td>
-                        <td>11-01-2024</td>
-                        <td>130</td>
-                    </tr>
-
-                </tbody>
-            </table>
-        </section>
-    </main>
-
-{%endblock body%}
+                    <div class="form-group pt-2">
+                        <div class="row d-flex">
+                            <div class="col-sm-4">
+                                <p class="text-warning mb-0">Expiration</p>
+                                <input type="text" name="exp" placeholder="MM/YYYY" size="7" id="exp" minlength="7"
+                                    maxlength="7">
+                            </div>
+                            <div class="col-sm-5 pt-0">
+                                <button type="button" class="btn btn-primary"><i
+                                        class="fas fa-arrow-right px-3 py-2"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="table-container">
+    <table id="payment-table">
+        <!-- Table headers and rows here -->
+    </table>
+</div>
+{% endblock body %}

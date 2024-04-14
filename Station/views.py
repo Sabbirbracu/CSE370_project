@@ -10,6 +10,7 @@ from .models import Station
 def station_function(requests):
     stations = Station.objects.all()
     context = {
-        'stations': stations
+        'stations': stations,
+        'page': "station"
     }
     return render(requests,'station_html/station.html', context)

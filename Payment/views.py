@@ -7,4 +7,5 @@ from django.views.decorators.cache import never_cache
 @never_cache
 
 def payment(requests):
-    return render(requests,'payment_html/payment.html')
+    page = "payment"
+    return render(requests,'payment_html/payment.html', {'page':page})

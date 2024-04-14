@@ -23,23 +23,23 @@
         <h2 class="logo">EasyMove</h2>
         <nav class="navigation">
 
-            {%if page == "index"%}
-            <button class="btnLogin-popup" onclick="redirectToLoginPage()">Login</button>
+            {%if page == "index" %}
+              <button class="btnLogin-popup" onclick="redirectToLoginPage()">Login</button>
 
-            {%elif page == "dashboard"%}
-            <a href="/station">Station</a>
-            <a href="#">Contact</a>
+            {%elif page == "dashboard" %}
+              <a href="/station">Station</a>
+              <a href="#">Contact</a>
 
-            {%elif page == "station"%}
-            <a href="/dashboard">Dashboard</a>
-            <a href="#">Ride</a>
-            <a href="#">Contact</a>
+            {%elif page == "station" %}
+              <a href="/dashboard">Dashboard</a>
+              <a href="/payment">Payment</a>
+              <a href="#">Contact</a>
 
-            {%else%}
-            <a href="/dashboard">Dashboard</a>
-            <a href="/station">Station</a>
-            <a href="#">Contact</a>
-            {%endif%}
+            {%elif page == "payment" %}
+              <a href="/dashboard">Dashboard</a>
+              <a href="/station">Station</a>
+              <a href="#">Contact</a>
+            {% endif %}
         </nav>
 
         <!-- Pop up message for success or error -->

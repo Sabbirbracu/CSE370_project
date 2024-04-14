@@ -3,7 +3,6 @@
 {%block title %}Station{%endblock title%}
 {%block link%}
 <link rel="stylesheet" href="/static/css/dashboard_css/style.css">
-<link rel="stylesheet" href="/static/css/station_css/station_style.css">
 {%endblock link%}
 
 
@@ -27,7 +26,7 @@
                 <tbody>
                     {% for station in stations%}
                     <tr>
-                        <td><b>{{station.Station_ID}}</b></td>
+                        <td>{{station.Station_ID}}</td>
                         <td>{{station.Station_Name}}</td>
                         <td>{{station.Number_of_Bikes}}</td>
                         <td>{{station.Station_Status}}</td>
