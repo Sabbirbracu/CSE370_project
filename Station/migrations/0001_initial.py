@@ -19,9 +19,5 @@ class Migration(migrations.Migration):
                 ('Number_of_Bikes', models.IntegerField()),
                 ('Station_Status', models.CharField(max_length=15)),
             ],
-            options={
-                'db_table': 'station',
-                'managed': False,
-            },
         ),
     ]
