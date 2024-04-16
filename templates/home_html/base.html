@@ -27,17 +27,17 @@
               <button class="btnLogin-popup" onclick="redirectToLoginPage()">Login</button>
 
             {%elif page == "dashboard" %}
-              <a href="/station">Station</a>
+              <a href="station">Station</a>
               <a href="#">Contact</a>
 
             {%elif page == "station" %}
-              <a href="/dashboard">Dashboard</a>
-              <a href="/payment">Payment</a>
+              <a href="dashboard">Dashboard</a>
+              <a href="payment">Payment</a>
               <a href="#">Contact</a>
 
             {%elif page == "payment" %}
-              <a href="/dashboard">Dashboard</a>
-              <a href="/station">Station</a>
+              <a href="dashboard">Dashboard</a>
+              <a href="station">Station</a>
               <a href="#">Contact</a>
             {% endif %}
         </nav>
