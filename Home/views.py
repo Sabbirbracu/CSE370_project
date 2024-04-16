@@ -61,7 +61,7 @@ def register(request):
                 return redirect('register')
                 
         form = CustomUserCreationForm(request.POST)
-        print(form.errors)
+        # print(form.errors)
         if form.is_valid():
 
             form.save()
