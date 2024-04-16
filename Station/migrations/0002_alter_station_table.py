@@ -9,9 +9,9 @@ class Migration(migrations.Migration):
         ('Station', '0001_initial'),
     ]
 
-    operations = [
-        migrations.AlterModelTable(
-            name='station',
-            table='station_table',
-        ),
-    ]
+    # operations = [
+    #     migrations.AlterModelTable(
+    #         name='station',
+    #         table='station_table',
+    #     ),
+    
