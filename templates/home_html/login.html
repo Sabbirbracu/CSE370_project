@@ -8,7 +8,8 @@
 
     <div class="login-box">
         <h2>Login</h2>
-        <form>
+        <form method="POST" action="login">
+            {%csrf_token%}
             <div class="user-box">
                 <input type="text" name="email" required="" />
                 <label>Email</label>
@@ -19,13 +20,22 @@
                 <label>Password</label>
             </div>
 
-            <a class="btn_submit" href="#">
+            <!-- <a class="btn_submit" href="#">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                Submit
-            </a>
+                Submit 
+            </a> -->
+            <div class="btn_submit">
+                
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <!-- Submit -->
+                <input type="submit" value="SUBMIT">
+            </div>
 
             <div class="box-bottom">
                 <span>Don't have an account?</span>
@@ -33,7 +43,7 @@
             </div>
 
             <div class="forgot_pass">
-                <a href="#" class="forgot_pass">Forgot Password</a>
+                <a href="reset_password" class="forgot_pass">Forgot Password</a>
             </div>
         </form>
     </div>

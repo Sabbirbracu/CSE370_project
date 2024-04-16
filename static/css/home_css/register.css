@@ -226,21 +226,22 @@ form .others_info .gender-details .category .label{
   margin-right: 10px;
 }
 
-form .employee_type{
-  width: 500px;
-  margin-top: 40px;
-  
+form .others_info .employee_type{
+  max-width: 300px;
+  width: 90%;
 }
 
-form .employee_type label{
+form .others_info .employee_type label{
   color: #52257e;
   font-size: 1rem;
   font-weight: 500;
   margin-right: 15px;
 }
-form .employee_type select{
+
+form .others_info .employee_type select{
   height: 45px;
-  width: 35%;
+  width: 100%;
+  margin-top: 12px;
   outline: none;
   font-size: 16px;
   border-radius: 5px;
@@ -249,6 +250,8 @@ form .employee_type select{
   border-bottom-width: 2px;
   transition: all 0.3s ease;
 }
+
+
 
 ::-webkit-calendar-picker-indicator{
   background-color: #ffffff;
