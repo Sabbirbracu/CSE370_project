@@ -1,0 +1,82 @@
+{%extends 'home_html/base.html'%}
+
+{%block title %}Dashboard{%endblock title%}
+
+{%block link%}
+<link rel="stylesheet" href="/static/css/dashboard_css/style.css">
+{%endblock link%}
+
+
+{%block body%}
+
+    <main class="table">
+        <section class="table_header">
+            <h1>Hello {{user.first_name}}! Your Ride History</h1>
+        </section>
+        <section class="table_body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <!-- <th>User</th> -->
+                        <th>Ride Id</th>
+                        <th>Pay_id</th>
+                        <th>initial Location</th>
+                        <th>Destination</th>
+                        <th>Total time</th>
+                        <th>Ride Date</th>
+                        <th>Cost/min</th>
+                        <th>Total Amount</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>2401</td>
+                        <!-- <td><img src="/static/images/dashboard_img/u1.jpg" alt="">Shihab</td> -->
+                        <td>01</td>
+                        <td>1</td>
+                        <td>Banashree</td>
+                        <td>Rampura</td>
+                        <td>20min</td>
+                        <td>01-02-2024</td>
+                        <td>5 Taka</td>
+                        <td>100</td>
+                        <td>10</td>
+                    </tr>
+
+                    <tr>
+                        <td>401</td>
+                        <!-- <td><img src="/static/images/dashboard_img/u1.jpg" alt="">Sabbir</td> -->
+                        <td>2</td>
+                        <td>1</td>
+                        <td>Banashree</td>
+                        <td>Rampura</td>
+                        <td>20min</td>
+                        <td>01-02-2024</td>
+                        <td>5 taka</td>
+                        <td>100</td>
+                        <td>10</td>
+                    </tr>
+
+                    <tr>
+                        <td>401</td>
+                        <!-- <td><img src="/static/images/dashboard_img/u1.jpg" alt="">Sajjad</td> -->
+                        <td>2</td>
+                        <td>1</td>
+                        <td>Banashree</td>
+                        <td>Rampura</td>
+                        <td>20min</td>
+                        <td>01-02-2024</td>
+                        <td>5 taka</td>
+                        <td>100</td>
+                        <td>10</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+{%endblock body%}
