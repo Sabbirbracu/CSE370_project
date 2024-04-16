@@ -31,7 +31,11 @@
               <a href="#">Contact</a>
 
             {%elif page == "station" %}
+              {%if user.user_type == "Admin"%}
+              <a href="admin_dashboard">Admin Dashboard</a>
+              {%else%}
               <a href="dashboard">Dashboard</a>
+              {%endif%}
               <a href="payment">Payment</a>
               <a href="#">Contact</a>
 
@@ -39,6 +43,21 @@
               <a href="dashboard">Dashboard</a>
               <a href="station">Station</a>
               <a href="#">Contact</a>
+
+            {%elif page == "admin_dashboard" %}
+            <a href="#">View Station</a>
+            <a href="update_station">Manage Station</a>
+            <a href="#">View Users</a>
+            <a href="#">Contact</a>
+
+            {%else%}
+              {%if user.user_type == "Admin"%}
+              <a href="admin_dashboard">Dashboard</a>
+              {%else%}
+              <a href="dashboard">Dashboard</a>
+              {%endif%}
+            <a href="station">Station</a>
+            <a href="#">Contact</a>
             {% endif %}
         </nav>
 
