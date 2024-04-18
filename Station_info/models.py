@@ -1,3 +1,4 @@
+
 from django.db import models
 
 class Station(models.Model):
@@ -5,7 +6,6 @@ class Station(models.Model):
     Station_Name = models.CharField(max_length=20)
     Number_of_Bikes = models.IntegerField()
     Station_Status = models.CharField(max_length=15)
-    
-    class Meta:
-        managed = False
-        db_table = 'station_table'
+
+    def __str__(self):
+        return self.Station_Name

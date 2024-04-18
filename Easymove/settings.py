@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Home.apps.HomeConfig',
     'Dashboard.apps.DashboardConfig',
-    'Station.apps.StationConfig',
+    'Station_info.apps.StationInfoConfig',
     'Payment.apps.PaymentConfig',
+    'Adminpannel.apps.AdminpannelConfig',
 ]
 
 MIDDLEWARE = [
