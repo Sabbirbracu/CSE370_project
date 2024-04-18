@@ -4,50 +4,82 @@
 
 {% block link %}
 
-<link rel="stylesheet" href="/static/css/payment_css/payment_style.css">
+<link rel="stylesheet" type = "text/css" href="/static/css/payment_css/payment_style.css">
 {% endblock link %}
 
 {% block body %}
 <div class="container-fluid">
     <div class="row d-flex justify-content-center">
         <div class="col-sm-12">
-            <div class="card mx-auto">
+            <div class="payment-container" id="payment-container"></div>
+            <div class="payment mx-auto">
                 <p class="heading">PAYMENT DETAILS</p>
-                <form class="card-details">
-                    <div class="form-group mb-0">
-                        <p class="text-warning mb-0">Card Number</p>
-                        <input type="text" name="card-num" placeholder="1234 5678 9012 3457" size="17" id="cno"
-                            minlength="19" maxlength="19">
+                <form class="payment-details">
+
+                    <div class="form-group">
+                        <div class="text-container">
+                            <p class="text-warning mb-0"><b>Total Time :</b></p>
+                            <div class="input-with-image1" style="margin-right: 45px;"> <input type="text" name="name"
+                                    placeholder="" size="17"> </div>
+                            <p style="font-size: 20px; color: #04456b;"><b>Minutes</b></p>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <p class="text-warning mb-0">Cardholder's Name</p> 
-                        <div class="input-with-image">
-                            <input type="text" name="name" placeholder="Name" size="17">
+                        <div class="text-container">
+                            <p class="text-warning mb-0"><b>Cost/Min :</b></p>
+                            <div class="input-with-image2"
+                                style="display: flex; align-items: center; margin-right: 115px;">
+                                <div class="fixed-value" style="margin-right: 102px;"><b>5</b></div>
+                                <div style="font-size: 20px; color: #04456b;"><b>Taka</b></div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-group pt-2">
-                        <div class="row d-flex">
-                            <div class="col-sm-4">
-                                <p class="text-warning mb-0">Expiration</p>
-                                <input type="text" name="exp" placeholder="MM/YYYY" size="7" id="exp" minlength="7"
-                                    maxlength="7">
-                            </div>
-                            <div class="col-sm-5 pt-0">
-                                <button type="button" class="btn btn-primary"><i
-                                        class="fas fa-arrow-right px-3 py-2"></i></button>
-                            </div>
+                    <div class="form-group">
+                        <div class="text-container">
+                            <p class="text-warning mb-0"><b>Total Amount :</b></p>
+                            <div class="input-with-image1" style="margin-right: 0px;"> <input type="text" name="name"
+                                    placeholder="" size="17"> </div>
+                            <p style="font-size: 20px; color: #04456b;"><b>Taka</b></p>
                         </div>
                     </div>
+                    
+
+                    <div class="form-group">
+                        <div class="text-container">
+                            <p class="text-warning mb-0"><b>Date :</b></p>
+                            <div class="input-with-image4" style="margin-left: 110px;">
+                                <input type="text" id="dateInput" name="name" placeholder="" size="17">
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <button type="submit" id="payNowButton" class="pay-now-btn" onclick="handlePayment(event)">Pay Now</button>
+                    </div>
+
                 </form>
+
+                <div id="paymentSuccessMessage" class="success-message">
+                    Your payment was successful!
+                </div>
             </div>
         </div>
     </div>
 </div>
-<div class="table-container">
-    <table id="payment-table">
-        <!-- Table headers and rows here -->
-    </table>
-</div>
+
+
+<script>
+    var today = new Date();
+    var formattedDate = today.toISOString().slice(0, 10);
+    document.getElementById("dateInput").value = formattedDate;
+</script>
+<script src="/static/js/payment_js/payment.js"></script>
+
+
 {% endblock body %}
