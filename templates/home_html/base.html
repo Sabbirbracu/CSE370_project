@@ -41,8 +41,8 @@
               <a href="#">View Users</a>
               <a href="#">Contact</a>
             </div> -->
-    
-            {%elif page == "station" %}
+
+            {%elif page == "bikestation" %}
               {%if user.user_type == "Admin"%}
                 <a href="update_station">Update Station</a>
                 <a href="insert_station">Insert Station</a>
@@ -50,15 +50,8 @@
               {%else%}
                 <a href="dashboard">Dashboard</a>
                 <a href="/payment">Payment</a>
-                <a href="#">Ride</a>
+                <a href="ride">Ride</a>
               {%endif%}
-              <a href="#">Contact</a>
-
-
-
-            {%elif page == "bikestation" %}
-              <a href="/dashboard">Dashboard</a>
-              <a href="/ride">Ride</a>
               <a href="#">Contact</a>
 
             {%elif page == "payment" %}
@@ -77,7 +70,7 @@
                 <a href="dashboard">Dashboard</a>
               {%endif%}
             <a href="/bikestation">Station</a>
-            <a href="/payment">Payment</a>
+            <a href="payment">Payment</a>
 
             {%else%}
               {%if user.user_type == "Admin"%}
