@@ -30,9 +30,15 @@
               <a href="/bikestation">Station</a>
               <a href="#">Contact</a>
 
+              {%elif page == "ride" %}
+              <a href="/dashboard">Dashboard</a>
+              <a href="/bikestation">Station</a>
+              <a href="/payment">Payment</a>
+              <a href="#">Contact</a>
+
             {%elif page == "bikestation" %}
               <a href="/dashboard">Dashboard</a>
-              <a href="/payment">Payment</a>
+              <a href="/ride">Ride</a>
               <a href="#">Contact</a>
 
             {%elif page == "payment" %}
