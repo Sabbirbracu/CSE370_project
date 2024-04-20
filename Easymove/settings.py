@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'Dashboard.apps.DashboardConfig',
     'Payment_Info.apps.PaymentInfoConfig',
     'Bike_Station.apps.BikeStationConfig',
-    'Ride.apps.RideConfig',
+    'MakeRide.apps.MakerideConfig',
     'Adminpannel.apps.AdminpannelConfig',
 ]
 

@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
-from Ride.models import Ride_data
+from MakeRide.models import Ride
 
 
 # Create your views here.
@@ -18,7 +18,7 @@ def ride(request):
             messages.error(request, 'Please enter different destinations')
 
         else:
-            ride = Ride_data(station=start_dest, destination=end_dest)
+            ride = Ride(station=start_dest, destination=end_dest)
             ride.save()
             return redirect("ride_time")
 
@@ -30,7 +30,7 @@ def ride(request):
 def ride_time(request):
     if request.method == 'POST':
         elapsed_time = request.POST.get('elapsedTime')
-        latest_ride = Ride_data.objects.latest('ride_id')
+        latest_ride = Ride.objects.latest('ride_id')
         latest_ride.total_time=elapsed_time
         latest_ride.save()
         
