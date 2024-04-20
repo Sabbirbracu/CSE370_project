@@ -1,0 +1,87 @@
+{%extends 'home_html/base.html'%}
+{%block title%}Ride Time{%endblock title%}
+{%block link%}
+<link rel="stylesheet" href="styles.css">
+{%endblock link%}
+
+
+{%block body%}
+<!DOCTYPE html>
+
+    <h1>Stopwatch</h1>
+    <div id="timer">00:00:00</div>
+    <button id="startBtn" onclick="startTimer()">Start</button>
+    <button id="stopBtn" onclick="stopTimer()" style="display: none;">Stop</button>
+
+    <script>
+        let timerInterval;
+        let startTime;
+        let elapsedTime = 0;
+        let isRunning = false;
+
+        const timerDisplay = document.getElementById('timer');
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+
+        function startTimer() {
+            if (!isRunning) {
+                startTime = Date.now() - elapsedTime;
+                timerInterval = setInterval(updateTimer, 1000);
+                isRunning = true;
+                startBtn.style.display = 'none';
+                stopBtn.style.display = 'inline-block';
+            }
+        }
+
+        function stopTimer() {
+            if (isRunning) {
+                clearInterval(timerInterval);
+                isRunning = false;
+                sendDataToBackend(elapsedTime);
+                window.location.href = 'dashboard.html';
+            }
+        }
+
+        function updateTimer() {
+            const now = Date.now();
+            elapsedTime = now - startTime;
+            displayTime(elapsedTime);
+        }
+
+        function displayTime(time) {
+            const seconds = Math.floor((time / 1000) % 60);
+            const minutes = Math.floor((time / 1000 / 60) % 60);
+            const hours = Math.floor((time / (1000 * 60 * 60)) % 24);
+            timerDisplay.textContent = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
+        }
+
+        function formatTime(time) {
+            return time < 10 ? `0${time}` : time;
+        }
+            function sendDataToBackend(time, elapsedTime) {
+        fetch('/update-time/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'X-CSRFToken': '{{ csrf_token }}'  // Include CSRF token if needed
+            },
+            body: new URLSearchParams({
+                'time': time,
+                'elapsedTime': elapsedTime // Include elapsedTime in the POST data
+            })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to update time');
+            }
+            return response.json();
+        })
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+    }
+
+    </script>
+</body>
+</html>
+
+{%endblock body%}
