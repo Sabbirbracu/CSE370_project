@@ -4,9 +4,24 @@
 {#<link rel="stylesheet" href="/static/css/home_css/style.css">#}
 {%endblock link%}
 
-    {%block body%}
 
-   This is ride page
+{%block body%}
+    <div class="login-box">
+        <h2>Ride Confirmation</h2>
+        <form method="POST" action="ride">
+            {%csrf_token%}
+            <div class="first_box">
+                <input type="text" name="start_destination" required="" />
+                <label>Start Destination</label>
+            </div>
 
-    
+            <div class="second_box">
+                <input type="text" name="end_destination" required="" />
+                <label>End Destination</label>
+            </div>
+            
+            <input type="submit" value="SUBMIT">
+        </form>
+    </div>
+
 {%endblock body%}
