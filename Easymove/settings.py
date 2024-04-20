@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Home.apps.HomeConfig',
     'Dashboard.apps.DashboardConfig',
+    'Rewards.apps.RewardsConfig',
 ]
 
 MIDDLEWARE = [
