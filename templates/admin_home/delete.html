@@ -1,0 +1,28 @@
+{% extends 'home_html/base.html' %}
+
+{%block title %} delete Station {%endblock title%}
+
+{%block link%}
+<link rel="stylesheet" href="/static/css/admin_css/insert.css">
+{%endblock link%}
+
+{%block body%}
+
+    <p>Are you sure want to delete {{station.Station_Name}}?</p>
+
+    <form method="POST">
+        {%csrf_token%}
+        <a href="bikestation">cancel</a>
+        <div class="btn_submit">
+            
+            <!-- <span></span>
+            <span></span>
+            <span></span>
+            <span></span> -->
+            <!-- Submit -->
+            <input type="submit" value="Confirm">
+        </div>
+
+    </form>
+
+{%endblock body%}

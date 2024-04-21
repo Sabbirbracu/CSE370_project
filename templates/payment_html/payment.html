@@ -3,7 +3,6 @@
 {% block title %}Payment{% endblock title %}
 
 {% block link %}
-
 <link rel="stylesheet" type = "text/css" href="/static/css/payment_css/payment_style.css">
 {% endblock link %}
 
@@ -14,7 +13,8 @@
             <div class="payment-container" id="payment-container"></div>
             <div class="payment mx-auto">
                 <p class="heading">PAYMENT DETAILS</p>
-                <form class="payment-details">
+                <form class="payment-details" method="POST" action="payment">
+                    {%csrf_token%}
 
                     <div class="form-group">
                         <div class="text-container">
@@ -50,7 +50,7 @@
                         <div class="text-container">
                             <p class="text-warning mb-0"><b>Date :</b></p>
                             <div class="input-with-image4" style="margin-left: 110px;">
-                                <input type="text" id="dateInput" name="name" placeholder="" size="17">
+                                <input type="text" id="dateInput" name="date" placeholder="" size="17">
                             </div>
                             <p></p>
                         </div>
@@ -58,16 +58,13 @@
 
 
 
-
                     <div class="form-group">
-                        <button type="submit" id="payNowButton" class="pay-now-btn" onclick="handlePayment(event)">Pay Now</button>
+                        <input type="submit" value="SUBMIT" class="pay-now-btn">
                     </div>
 
+                    
                 </form>
 
-                <div id="paymentSuccessMessage" class="success-message">
-                    Your payment was successful!
-                </div>
             </div>
         </div>
     </div>
@@ -79,7 +76,6 @@
     var formattedDate = today.toISOString().slice(0, 10);
     document.getElementById("dateInput").value = formattedDate;
 </script>
-<script src="/static/js/payment_js/payment.js"></script>
 
 
 {% endblock body %}

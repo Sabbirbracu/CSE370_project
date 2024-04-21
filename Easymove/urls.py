@@ -23,5 +23,7 @@ urlpatterns = [
     path('',include('Dashboard.urls')),
     path('',include('Payment_Info.urls')),
     path('',include('Bike_Station.urls')),
-    path('',include('Ride.urls')),
+    path('',include('MakeRide.urls')),
+    path('',include('Adminpannel.urls')),
+    path('',include('Rewards.urls'))
 ]

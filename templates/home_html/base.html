@@ -28,22 +28,55 @@
 
             {%elif page == "dashboard" %}
               <a href="/bikestation">Station</a>
-              <a href="#">Contact</a>
+              <a href="#">About Us</a>
 
-              {%elif page == "ride" %}
-              <a href="/dashboard">Dashboard</a>
-              <a href="/bikestation">Station</a>
-              <a href="/payment">Payment</a>
+            {%elif page == "admin_dashboard" %}
+            <a href="bikestation">Manage Station</a>
+            <a href="view_users">View Users</a>
+            <a href="#">About Us</a>
+
+  
+              <!-- <a href="station">View Station</a>
+              <a href="#" class="dropbtn">Manage Station</a>
+              <a href="#">View Users</a>
               <a href="#">Contact</a>
+            </div> -->
 
             {%elif page == "bikestation" %}
-              <a href="/dashboard">Dashboard</a>
-              <a href="/ride">Ride</a>
-              <a href="#">Contact</a>
+              {%if user.user_type == "Admin"%}
+                <a href="update_station">Update Station</a>
+                <a href="insert_station">Insert Station</a>
+                <a href="admin_dashboard">Dashboard</a>
+              {%else%}
+                <a href="dashboard">Dashboard</a>
+                <a href="ride">Ride</a>
+              {%endif%}
+              <a href="#">About Us</a>
 
             {%elif page == "payment" %}
-              <a href="/dashboard">Dashboard</a>
+
+              <!-- {%if user.user_type == "Admin"%}
+                <a href="admin_dashboard">Dashboard</a>
+              {%else%}
+                <a href="dashboard">Dashboard</a>
+              {%endif%}
               <a href="/bikestation">Station</a>
+              <a href="#">Contact</a> -->
+
+            {%elif page == "ride" %}
+              {%if user.user_type == "Admin"%}
+                <a href="admin_dashboard">Dashboard</a>
+              {%else%}
+                <a href="dashboard">Dashboard</a>
+              {%endif%}
+            <a href="/bikestation">Station</a>
+
+            {%else%}
+              {%if user.user_type == "Admin"%}
+                <a href="admin_dashboard">Dashboard</a>
+              {%else%}
+                <a href="dashboard">Dashboard</a>
+              {%endif%}
               <a href="#">Contact</a>
             {% endif %}
         </nav>
@@ -115,7 +148,7 @@
               </li>
 
               <li class="profile-dropdown-list-item">
-                <a href="#">
+                <a href="rewards">
                   <i class="fa-regular fa-coins"></i>
                   Rewards
                 </a>

@@ -1,0 +1,40 @@
+{%extends 'home_html/base.html'%}
+{%block title%}rewards{%endblock title%}
+{%block link%}
+<link rel="stylesheet" href="/static/css/dashboard_css/style.css">
+{%endblock link%}
+
+{%block body%}
+
+
+    <main class="table">
+        <section class="table_header">
+            <h1>Hello {{user.first_name}}! Your Ride History</h1>
+        </section>
+        <section class="table_body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rewards_Id</th>
+                        <th>Points</th>
+                        <th>Payment_Id</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for reward in rewards%}
+                    <tr>
+                        <td>{{reward.Rewards_id}}</td>
+                        <td>{{reward.Points}}</td>
+                        <td>{{reward.payment_id}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+
+{%endblock body%}
+
+
