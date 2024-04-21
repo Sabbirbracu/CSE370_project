@@ -12,9 +12,11 @@ def payment(request):
     total_time = latest_ride.total_time
     cost_per_min = 5
     total_amount = total_time * cost_per_min
+    get_id = latest_ride.pk
 
     if request.method == "POST":
-        payment_info = Payment_Info.objects.create(cost_per_min=cost_per_min, total_amount=total_amount)
+        ride_id = Ride.objects.get(ride_id=get_id)
+        payment_info = Payment_Info.objects.create(cost_per_min=cost_per_min, total_amount=total_amount,ride=ride_id)
         payment_info.save()
         page = "dashboard"
         return render(request, 'Dashboard/dashboard.html', {'page': page})
