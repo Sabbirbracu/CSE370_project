@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Bike_Station.apps.BikeStationConfig',
     'MakeRide.apps.MakerideConfig',
     'Adminpannel.apps.AdminpannelConfig',
+    'Rewards.apps.RewardsConfig',
 ]
 
 MIDDLEWARE = [
