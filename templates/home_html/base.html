@@ -28,12 +28,12 @@
 
             {%elif page == "dashboard" %}
               <a href="/bikestation">Station</a>
-              <a href="#">Contact</a>
+              <a href="#">About Us</a>
 
             {%elif page == "admin_dashboard" %}
             <a href="bikestation">Manage Station</a>
-            <a href="#">View Users</a>
-            <a href="#">Contact</a>
+            <a href="view_users">View Users</a>
+            <a href="#">About Us</a>
 
   
               <!-- <a href="station">View Station</a>
@@ -49,19 +49,19 @@
                 <a href="admin_dashboard">Dashboard</a>
               {%else%}
                 <a href="dashboard">Dashboard</a>
-                <a href="/payment">Payment</a>
                 <a href="ride">Ride</a>
               {%endif%}
-              <a href="#">Contact</a>
+              <a href="#">About Us</a>
 
             {%elif page == "payment" %}
-              {%if user.user_type == "Admin"%}
+
+              <!-- {%if user.user_type == "Admin"%}
                 <a href="admin_dashboard">Dashboard</a>
               {%else%}
                 <a href="dashboard">Dashboard</a>
               {%endif%}
               <a href="/bikestation">Station</a>
-              <a href="#">Contact</a>
+              <a href="#">Contact</a> -->
 
             {%elif page == "ride" %}
               {%if user.user_type == "Admin"%}
@@ -70,7 +70,6 @@
                 <a href="dashboard">Dashboard</a>
               {%endif%}
             <a href="/bikestation">Station</a>
-            <a href="payment">Payment</a>
 
             {%else%}
               {%if user.user_type == "Admin"%}

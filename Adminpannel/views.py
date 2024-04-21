@@ -1,6 +1,7 @@
 
 from django.shortcuts import render,redirect
 from Bike_Station.models import Bike_Station
+from Home.models import CustomUser
 
 # Create your views here.
 def admin_dashboard(request):
@@ -22,3 +23,9 @@ def insert_station(request):
         return redirect("bikestation")
     page = "insert_station"
     return render(request,"admin_home/insert_station.html",{'page':page})
+
+
+def view_users(request):
+    Users = CustomUser.objects.all()
+    page = "view_users"
+    return render(request,"admin_home/view_users.html",{'page':page,'Users':Users})
