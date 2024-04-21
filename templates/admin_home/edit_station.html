@@ -8,18 +8,23 @@
 
 {%block body%}
 <div class="insert_box">
-    <h2>Insert Station Data</h2>
-    <form method="POST" action="insert_station">
+    <h2>Update Station Data</h2>
+    <form method="POST" >
         {%csrf_token%}
         <div class="input-box">
-            <input type="text" name="station_name" required="" />
+            <input type="text" name="station_name" value="{{station.Station_Name}}" required="" />
             <label>Station Name</label>
         </div>
 
         <div class="input-box">
-            <input type="text" name="num_of_bikes" required="" />
+            <input type="text" name="num_of_bikes" required="" value="{{station.Number_of_Bikes}}"/>
             <label>Number of Bikes</label>
         </div>
+
+        <!-- <div class="input-box">
+            <input type="text" name="status" required="" value="{{station.Station_Status}}" />
+            <label>Station Status</label>
+        </div> -->
 
         <div class="btn_submit">
             
@@ -28,7 +33,7 @@
             <span></span>
             <span></span>
             <!-- Submit -->
-            <input type="submit" value="Insert">
+            <input type="submit" value="Update">
         </div>
 
         <div class="box-bottom">

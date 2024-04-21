@@ -30,13 +30,7 @@
                         <td>{{station.Station_ID}}</td>
                         <td>{{station.Station_Name}}</td>
                         <td>{{station.Number_of_Bikes}}</td>
-                        <td>
-                            {% if station.Number_of_Bikes < 1 %}
-                                Unavailable
-                            {% else %}
-                                {{ station.Station_Status }}
-                            {% endif %}
-                        </td>
+                        <td>{{ station.Station_Status }}</td>
                     </tr>
                     {% endfor %}
 
