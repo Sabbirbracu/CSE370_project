@@ -1,27 +1,36 @@
-{%extends 'home_html/base.html'%}
-{%block title%}Ride{%endblock title%}
-{%block link%}
+{% extends 'home_html/base.html' %}
+{% block title %}Ride{% endblock title %}
+{% block link %}
 
-{%endblock link%}
+{% endblock link %}
 
+{% block body %}
+<div class="login-box">
+    <h2>Ride Confirmation</h2>
+    <form method="POST" action="ride">
+        {% csrf_token %}
+        <div class="first_box">
+            <label for="start_destination">Start Destination:</label>
+            <select name="start_destination" id="start_destination" required>
+                <option value="">Select Start Destination</option>
+                {% for station in stations %}
+                <option value="{{ station.Station_Name }}">{{ station.Station_Name }}</option>
+                {% endfor %}
+            </select>
+        </div>
 
-{%block body%}
-    <div class="login-box">
-        <h2>Ride Confirmation</h2>
-        <form method="POST" action="ride">
-            {%csrf_token%}
-            <div class="first_box">
-                <input type="text" name="start_destination" required="" />
-                <label>Start Destination</label>
-            </div>
+        <div class="second_box">
+            <label for="end_destination">End Destination:</label>
+            <select name="end_destination" id="end_destination" required>
+                <option value="">Select Start Destination</option>
+                {% for station in stations %}
+                <option value="{{ station.Station_Name }}">{{ station.Station_Name }}</option>
+                {% endfor %}
+            </select>
+        </div>
 
-            <div class="second_box">
-                <input type="text" name="end_destination" required="" />
-                <label>End Destination</label>
-            </div>
-            
-            <input type="submit" value="SUBMIT">
-        </form>
-    </div>
+        <input type="submit" value="SUBMIT">
+    </form>
+</div>
 
-{%endblock body%}
+{% endblock body %}
