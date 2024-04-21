@@ -1,0 +1,81 @@
+{% extends 'home_html/base.html' %}
+
+{% block title %}Payment{% endblock title %}
+
+{% block link %}
+<link rel="stylesheet" type = "text/css" href="/static/css/payment_css/payment_style.css">
+{% endblock link %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-12">
+            <div class="payment-container" id="payment-container"></div>
+            <div class="payment mx-auto">
+                <p class="heading">PAYMENT DETAILS</p>
+                <form class="payment-details" method="POST" action="payment">
+                    {%csrf_token%}
+
+                    <div class="form-group">
+                        <div class="text-container">
+                            <p class="text-warning mb-0"><b>Total Time :</b></p>
+                            <div class="input-with-image1" style="margin-right: 45px;"> <input type="text" name="name"
+                                value="{{ total_time }}" placeholder="" size="17"> </div>
+                            <p style="font-size: 20px; color: #04456b;"><b>Minutes</b></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="text-container">
+                            <p class="text-warning mb-0"><b>Cost/Min :</b></p>
+                            <div class="input-with-image2"
+                                style="display: flex; align-items: center; margin-right: 115px;">
+                                <div class="fixed-value" style="margin-right: 102px;"><b>5</b></div>
+                                <div style="font-size: 20px; color: #04456b;"><b>Taka</b></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="text-container">
+                            <p class="text-warning mb-0"><b>Total Amount :</b></p>
+                            <div class="input-with-image1" style="margin-right: 0px;"> <input type="text" name="name"
+                                value="{{ total_amount }}" placeholder="" size="17"> </div>
+                            <p style="font-size: 20px; color: #04456b;"><b>Taka</b></p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <div class="text-container">
+                            <p class="text-warning mb-0"><b>Date :</b></p>
+                            <div class="input-with-image4" style="margin-left: 110px;">
+                                <input type="text" id="dateInput" name="date" placeholder="" size="17">
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <input type="submit" value="SUBMIT" class="pay-now-btn">
+                    </div>
+
+                    
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var today = new Date();
+    var formattedDate = today.toISOString().slice(0, 10);
+    document.getElementById("dateInput").value = formattedDate;
+</script>
+
+
+{% endblock body %}

@@ -1,0 +1,156 @@
+.payment {
+    background-color: rgba(213, 209, 222, 0.8);
+    border-radius: 45px;
+    box-shadow: 20px -20px 1px 1px rgba(226, 225, 210, 0.4);
+    padding-top: 15px;
+    padding-bottom: 40px;
+    padding-left: 150px;
+    padding-right: 170px;
+}
+
+.heading {
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px -2px 1px rgba(71, 107, 173, 0.7);
+    letter-spacing: 4px;
+    word-spacing: 15px;
+}
+
+.text-warning {
+    font-size: 20px;
+    margin: 20px;
+    color: #4e0101;
+    font-weight: 550;
+    padding-right: 20px;
+    text-shadow: 1px -1px 0px rgba(71, 107, 173, 01);
+    letter-spacing: 1px;
+    word-spacing: 5px;
+}
+
+.text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: first baseline;
+}
+
+
+.input-with-image1 input {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    border-width: 0.2ch;
+    border-color: rgb(41, 82, 105);
+    border-style: solid;
+    font-size: 20px;
+    padding-left: 10px;
+    box-shadow: 4px -4px 2px 3px rgba(71, 107, 173, 0.5);
+
+}
+
+
+
+.fixed-value {
+    font-size: x-large;
+    text-align: justify;
+}
+
+.input-with-image2 {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    background-color: rgb(151, 209, 190);
+    border-radius: 10px;
+    border-width: 0.3ch;
+    border-color: rgb(41, 82, 105);
+    border-style: solid;
+    font-size: 11px;
+    padding-left: 40px;
+    box-shadow: 4px -4px 2px 3px rgba(71, 107, 173, 0.5);
+}
+
+
+.input-with-image3 input {
+    position: relative;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border-width: 0.2ch;
+    border-color: rgb(41, 82, 105);
+    border-style: solid;
+    font-size: 20px;
+    padding-left: 10px;
+    box-shadow: 4px -4px 2px 3px rgba(71, 107, 173, 0.5);
+
+}
+
+
+.input-with-image4 input {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    border-width: 0.2ch;
+    border-color: rgb(41, 82, 105);
+    border-style: solid;
+    font-size: 20px;
+    padding-left: 15px;
+    box-shadow: 4px -4px 2px 3px rgba(71, 107, 173, 0.5);
+
+}
+
+
+.pay-now-btn {
+    background-color: #3b9e3f;
+    color: white;
+    border-width: 5px;
+    border-style: hidden;
+    width: 130px;
+    height: 50px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 35px;
+    margin-left: 365px;
+    animation: blink-shadow 1s infinite;
+}
+
+.pay-now-btn:hover {
+    color: black;
+    font-weight: 600;
+    background-color: #87e487;
+}
+
+@keyframes blink-shadow {
+
+    0%,
+    100% {
+        box-shadow: 0px 0px 0px 0px rgba(20, 170, 58, 0.5);
+    }
+
+    50% {
+        box-shadow: 4px -4px 4px 4px rgba(49, 167, 78, 0.5);
+    }
+}
+
+.paid {
+    background-color: rgba(76, 213, 255, 0.5);
+    color: rgb(0, 0, 0);
+    box-shadow: none;
+    font-weight: 700;
+    border-radius: 70px;
+    border-width: 0.2ch;
+    border-color: rgb(41, 82, 105);
+    border-style:solid;
+    letter-spacing: 3px;
+    box-shadow: 4px -4px 1px 7px rgba(71, 107, 173, 0.7);
+}
+
+
+.success-message {
+    display: none;
+}

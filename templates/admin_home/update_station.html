@@ -1,0 +1,52 @@
+{% extends 'home_html/base.html' %}
+
+{%block title %} Update Station {%endblock title%}
+
+{%block link%}
+<link rel="stylesheet" href="/static/css/dashboard_css/style.css">
+<link rel="stylesheet" href="/static/css/station_css/station_style.css">
+{%endblock link%}
+
+{%block body%}
+<main class="table">
+    <section class="table_header">
+        <h1>Update Station</h1>
+    </section>
+    <section class="table_body">
+        <table>
+            <thead>
+                <tr>
+                    <th>Station ID</th>
+                    <th>Station Name</th>
+                    <th>Number of Bikes</th>
+                    <th>Station Status</th>
+                    <th>Edit Station</th>
+                    <th>Delete Station</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for station in bikestations%}
+                <tr>
+                    <td>{{station.Station_ID}}</td>
+                    <td>{{station.Station_Name}}</td>
+                    <td>{{station.Number_of_Bikes}}</td>
+                    <td>
+                        {% if station.Number_of_Bikes < 1 %}
+                            Unavailable
+                        {% else %}
+                            {{ station.Station_Status }}
+                        {% endif %}
+                    </td>
+                    <td><a href="{% url 'edit_station' station.Station_ID %}">edit</a></td>
+
+                    <td><a href="{% url 'delete_station' station.Station_ID %}">delete</a></td>
+
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </section>
+</main>
+{%endblock body%}
