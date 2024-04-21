@@ -58,17 +58,13 @@
 
 
 
-
                     <div class="form-group">
-                        <!-- <button type="submit" id="payNowButton" class="pay-now-btn" onclick="handlePayment(event)">Pay Now</button> -->
                         <input type="submit" value="SUBMIT" class="pay-now-btn">
                     </div>
 
+                    
                 </form>
 
-                <div id="paymentSuccessMessage" class="success-message">
-                    Your payment was successful!
-                </div>
             </div>
         </div>
     </div>
@@ -80,7 +76,6 @@
     var formattedDate = today.toISOString().slice(0, 10);
     document.getElementById("dateInput").value = formattedDate;
 </script>
-<script src="/static/js/payment_js/payment.js"></script>
 
 
 {% endblock body %}

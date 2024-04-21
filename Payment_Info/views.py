@@ -3,7 +3,6 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import never_cache
 from MakeRide.models import Ride
 from .models import Payment_Info
-from django.contrib import messages
 
 @login_required
 @never_cache
@@ -15,10 +14,10 @@ def payment(request):
     total_amount = total_time * cost_per_min
 
     if request.method == "POST":
-        payment_info = Payment_Info.objects.create(cost_per_min=cost_per_min,total_amount=total_amount)
+        payment_info = Payment_Info.objects.create(cost_per_min=cost_per_min, total_amount=total_amount)
         payment_info.save()
-        messages.success(request,"your payment has been done")
-        return redirect("dashboard")
+        page = "dashboard"
+        return render(request, 'Dashboard/dashboard.html', {'page': page})
 
     page = "payment"
     return render(request, 'payment_html/payment.html', {'page': page, 'total_time': total_time,'total_amount':total_amount})
