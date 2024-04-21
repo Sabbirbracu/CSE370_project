@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import never_cache
 from MakeRide.models import Ride
 from .models import Payment_Info
+from Rewards.models import Rewards
 
 @login_required
 @never_cache
@@ -18,6 +19,14 @@ def payment(request):
         ride_id = Ride.objects.get(ride_id=get_id)
         payment_info = Payment_Info.objects.create(cost_per_min=cost_per_min, total_amount=total_amount,ride=ride_id)
         payment_info.save()
+
+
+        points = total_amount
+        latest_payment = Payment_Info.objects.latest('payment_id')
+        get_payment_id = latest_payment.pk
+        payment_id = Payment_Info.objects.get(payment_id=get_payment_id)
+        reward = Rewards(payment=payment_id,Points=points)
+        reward.save()
         page = "dashboard"
         return render(request, 'Dashboard/dashboard.html', {'page': page})
 

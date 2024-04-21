@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponse
-from . models import Rewards
+from . models import Rewards,Payment_Info
 
 # Create your views here
 def rewards(request):
@@ -7,5 +7,6 @@ def rewards(request):
     context = {
         'rewards': rewards,
         'page': "rewards"
+        
     }
     return render(request,'rewards/rewards.html', context)
