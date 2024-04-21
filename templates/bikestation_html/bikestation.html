@@ -1,0 +1,42 @@
+{%extends 'home_html/base.html'%}
+
+{%block title %}Station{%endblock title%}
+{%block link%}
+<link rel="stylesheet" href="/static/css/dashboard_css/style.css">
+<link rel="stylesheet" href="/static/css/station_css/station_style.css">
+{%endblock link%}
+
+
+{%block body%}
+
+    <main class="table">
+        <section class="table_header">
+            <h1>Station Overview</h1>
+        </section>
+        <section class="table_body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Station ID</th>
+                        <th>Station Name</th>
+                        <th>Number of Bikes</th>
+                        <th>Station Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for station in bikestations%}
+                    <tr>
+                        <td>{{station.Station_ID}}</td>
+                        <td>{{station.Station_Name}}</td>
+                        <td>{{station.Number_of_Bikes}}</td>
+                        <td>{{ station.Station_Status }}</td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+{%endblock body%}

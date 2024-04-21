@@ -111,3 +111,25 @@ tbody tr:hover{
         min-width: 12.1rem;
     }
 }
+
+
+
+
+#successMessage {
+    position: fixed;
+    top: 10px;
+    left: 69%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    font-size: large;
+    font-weight: 700;
+    padding: 10px 10px;
+    border-radius: 10px;
+    box-shadow: 2px -2px 4px 3px rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+
+.hidden {
+    display: none;
+}

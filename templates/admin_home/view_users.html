@@ -1,0 +1,79 @@
+{%extends 'home_html/base.html'%}
+
+{%block title %}Users{%endblock title%}
+{%block link%}
+<link rel="stylesheet" href="/static/css/dashboard_css/style.css">
+<link rel="stylesheet" href="/static/css/station_css/station_style.css">
+{%endblock link%}
+
+
+{%block body%}
+
+    <main class="table">
+        <section class="table_header">
+            <h1>Users Info(Rider)</h1>
+        </section>
+        <section class="table_body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>User Name</th>
+                        <th>Address</th>
+                        <th>Joining Date</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for user in Users%}
+                    <tr>
+                        {%if user.user_type == "Rider"%}
+                            <td>{{user.id}}</td>
+                            <td>{{user.first_name}} {{user.last_name}}</td>
+                            <td>{{user.address}}</td>
+                            <td>{{user.date_joined|date}}</td>
+                        {%endif%}
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+
+    <br>
+
+    <main class="table">
+        <section class="table_header">
+            <h1>Users Info(Admin/Staff)</h1>
+        </section>
+        <section class="table_body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>User Name</th>
+                        <th>Address</th>
+                        <th>Joining Date</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for user in Users%}
+                    <tr>
+                        {%if user.user_type == "Admin"%}
+                            <td>{{user.id}}</td>
+                            <td>{{user.first_name}} {{user.last_name}}</td>
+                            <td>{{user.address}}</td>
+                            <td>{{user.date_joined|date}}</td>
+                        {%endif%}
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+{%endblock body%}
