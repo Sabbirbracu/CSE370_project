@@ -1,0 +1,42 @@
+.confirmation-box {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width:500px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.confirmation-box p {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.button-container {
+    margin-top: 10px;
+    display: flex; /* Make the buttons flex items */
+    justify-content: space-between; /* Distribute space between the buttons */
+}
+
+.cancel-btn {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn_submit input[type="submit"] {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn_submit input[type="submit"]:hover {
+    background-color: darkred;
+}
