@@ -1,22 +1,67 @@
-{%extends 'home_html/base.html'%}
+{% extends 'home_html/base.html' %}
 
-{%block title %}Admin Dashboard{%endblock title%}
+{% block title %}Admin Dashboard{% endblock title %}
 
-{%block link%}
-<!-- <link rel="stylesheet" href="/static/css/dashboard_css/style.css"> -->
-{%endblock link%}
+{% block link %}
+    <link rel="stylesheet" href="/static/css/admin_css/admin_dashboard.css">
+{% endblock link %}
 
+{% block body %}
+    <div class="box">
+        <div class="number"> {{ total_stations }} </div>
+        <div class="label">Total Stations</div>
+    </div>
+    <div class="box">
+        <div class="number"> {{ total_ride_users }} </div>
+        <div class="label">Total Ride Users</div>
+    </div>
 
-{%block body%}
+    <div class="box-top-stations">
+        <h3>Top Stations</h3>
+        <div class="content">
+            {% for station in top_stations %}
+            <p class="station-info"><span class="station-name">{{ station.station_name }}</span>:<span class="ride-num">{{ station.total_rides }} rides</span></p>
+            {% endfor %}
+        </div>
 
+        <button id="show-history-btn">Show Station History</button>
 
+        <div class="ride-history-box" id="ride-history-box" style="display: none;">
+            <main class="table">
+                <section class="table_body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Station Name</th>
+                                <th>Ride ID</th>
+                                <th>Destination</th>
+                                <!-- <th>Station Status</th> -->
+                            </tr>
+                        </thead>
+        
+                        <tbody>
+                            {% for ride in ride_history %}
+                            <tr>
+                                <td>{{ ride.station_name }}</td>
+                                <td>{{ ride.ride_id }}</td>
+                                <td>{{ ride.destination }}</td>
+                                <!-- <td>{{ station.Station_Status }}</td> -->
+                            </tr>
+                            {% endfor %}
+        
+                        </tbody>
+                    </table>
+                </section>
+            </main>
 
+        </div>
+    </div>
 
-This is admin Dashboard
-
-
-
-
-
-
-{%endblock body%}
+    <script>
+        document.getElementById('show-history-btn').addEventListener('click', function() {
+            var rideHistoryBox = document.getElementById('ride-history-box');
+            rideHistoryBox.style.display = (rideHistoryBox.style.display == 'none') ? 'block' : 'none';
+        });
+    </script>
+    
+{% endblock body %}

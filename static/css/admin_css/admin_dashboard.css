@@ -1,0 +1,139 @@
+.box {
+    background-color: rgba(255, 255, 255, 0.2); /* Blur box with white color */
+    width: 200px;
+    height: 120px;
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.box-top-stations{
+    background-color: rgba(255, 255, 255, 0.2); /* Blur box with white color */
+    width: 300px;
+    height: 150px;
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.number {
+    font-size: 48px;
+    color: rgb(255, 255, 0);
+    animation: blink 1s 5 alternate; /* Make the number blink */
+    font-weight: 700;
+}
+
+.box-top-stations .number{
+    .number {
+        font-size: 48px;
+        color: rgb(238, 238, 233);
+        animation: blink 1s 15 alternate; /* Make the number blink */
+        font-weight: 700;
+    }
+}
+
+.box-top-stations h3{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: aliceblue;
+}
+
+.label {
+    font-size: 24px; /* Smaller font size for label */
+    color: white;
+    font-weight: 600;
+}
+
+.box-top-stations .station-info .station-name{
+    color: rgb(101, 232, 36);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-right: 12px;
+}
+
+.box-top-stations .station-info .ride-num{
+    color: rgb(255, 255, 0);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-left: 12px;
+    animation: blink 1s 5 alternate;
+}
+
+.box-top-stations .station-info{
+    color: aliceblue;
+    font-size: 1.4rem;
+}
+
+
+
+
+
+.box-top-stations .ride-history-box {
+    max-height: 300px; /* Set a fixed height for the box */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-top: 20px; /* Adjust top margin as needed */
+}
+
+.box-top-stations .ride-history-box table {
+    width: 100%; /* Make the table fill the box horizontally */
+    table-layout: fixed; /* Fix the table layout */
+    border: 3px solid rgba(108, 156, 182, 0.3);
+    border-collapse: collapse;
+    background-color: rgba(250, 250, 250, 0.3);
+}
+
+.box-top-stations .ride-history-box table thead th {
+    background-color: rgba(228, 237, 218, 0.3);
+    border-bottom: 3px solid rgba(108, 156, 182, 0.1);
+    color: rgb(238, 166, 11);
+    font-size: 1.3em;
+    font-weight: 600;
+
+}
+
+.box-top-stations .ride-history-box table td {
+    padding: 5px 8px;
+    border: 3px solid rgba(108, 156, 182, 0.1);
+    background-color: rgba(208, 196, 202, 0.3);
+    color: rgb(13, 32, 55);
+    font-weight: 500;
+    
+}
+
+/* Remove animations for border effect */
+.box-top-stations .ride-history-box table::before,
+.box-top-stations .ride-history-box table::after {
+    animation: none;
+}
+
+
+
+#show-history-btn {
+    background-color: yellow;
+    border: none;
+    font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px; /* Make it an oval shape */
+    width: 140px; /* Set width and height to create oval shape */
+    height: 50px;
+    color: rgb(11, 32, 70); /* Change text color */
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add smooth transition for hover effect */
+}
+
+#show-history-btn:hover {
+    background-color: gold; /* Change color on hover */
+    color: #ee0606;
+
+}
