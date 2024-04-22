@@ -5,6 +5,7 @@ from MakeRide.models import Ride
 from .models import Payment_Info
 from Rewards.models import Rewards
 from django.db.models import Sum
+from django.contrib import messages
 
 @login_required
 @never_cache
@@ -44,10 +45,9 @@ def payment(request):
         request.user.rewards.add(reward)
         
         user_points = request.user.rewards.aggregate(total_points=Sum('Points'))['total_points']
-        print("User Total Points", user_points)
-        
-        page = "dashboard"
-        return render(request, 'Dashboard/dashboard.html', {'page': page})
+        # print("User Total Points", user_points)
+        messages.success(request,"Your payment is Successfull !")
+        return redirect("dashboard")
 
     page = "payment"
     return render(request, 'payment_html/payment.html', {'page': page, 'total_time': total_time, 'total_amount': total_amount})

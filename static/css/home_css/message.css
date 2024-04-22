@@ -1,0 +1,34 @@
+#successMessage {
+    position: fixed;
+    top: 60px;
+    left: 81%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.3em;
+    font-weight: 700;
+    padding: 10px 10px;
+    border-radius: 10px;
+    box-shadow: 2px -2px 4px 3px rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+
+.hidden {
+    display: none;
+}
+
+
+#errorMessage {
+    position: fixed;
+    top: 80px;
+    left: 80%;
+    transform: translateX(-50%);
+    background-color: #cf3217;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 10px 10px;
+    border-radius: 10px;
+    box-shadow: 2px -2px 4px 3px rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
