@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'MakeRide.apps.MakerideConfig',
     'Adminpannel.apps.AdminpannelConfig',
     'Rewards.apps.RewardsConfig',
+    'ManageProfile.apps.ManageprofileConfig',
 ]
 
 MIDDLEWARE = [

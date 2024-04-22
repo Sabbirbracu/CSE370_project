@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-{%block head%}
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EasyMove{%block title%}{%endblock title%}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Bungee+Inline&family=Chivo+Mono:wght@300;500&family=Comfortaa:wght@700&family=Fira+Sans:wght@200&family=Monofett&family=Raleway:wght@300&family=Sono:wght@200;600&family=Sonsie+One&family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://i.ibb.co/nnLmmqM/505-5055502-simple-location-map-pin-icon3-red-free-vector-removebg-preview.png" type="image/x-icon">
+    <link href="/static/css/view_profile_css/view.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="stylesheet" href="/static/css/base_css/base.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
 
     <link rel="stylesheet" href="/static/css/home_css/message.css">
-    {%block link%} {%endblock link%}
+        
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <title>View Profile</title>
 </head>
-{%endblock head%}
 <body>
+
+
 
     <header>
         <h2 class="logo">EasyMove</h2>
@@ -167,15 +179,47 @@
 
 
     </header>
-    <div class="overlay"></div>
 
-    {%block body%}{%endblock body%}
 
-    <script>
-      function redirectToLoginPage() {
-          window.location.href = "/login";
-      }
-  </script>
+
+
+
+    <div class="c1"></div>
+    <div class="c2"></div>
+    <div class="c3"></div>
+    <div class="c4"></div>
+    <div class="mainD">
+        <div class="main">
+            <div class="left">
+                <div class="box">
+
+                    <p class="pleft">ID<br><input type="text" placeholder="{{user.id}}"/></p>
+                    <p class="pleft">Name<br><input type="text" placeholder="{{user.first_name}} {{user.last_name}}"/></p>
+                    
+                    <p class="pleft">NID<br><input type="text" placeholder="{{user.nid}}"/></p>
+                    
+                    <p class="pleft">Email<br><input type="text" placeholder="{{user.email}}"/></p>
+                    
+                    <p class="pleft">Address<br><input type="text" placeholder="{{user.address}}"/></p>
+                    
+                    <p class="pleft">Joining Date<br><input type="text" placeholder="{{user.date_joined}}"/></p>
+                    
+                </div>
+            </div>
+            <div class="right">
+                <div>
+                  {%if user.user_type == "Admin"%}
+                    <p class="pright">Staff<br><input type="text" placeholder="Yes"/></p>
+                    <p class="pright">Rider<br><input type="text" placeholder="No"/></p>
+                  {%else%}
+                    <p class="pright">Staff<br><input type="text" placeholder="No"/></p>
+                    <p class="pright">Rider<br><input type="text" placeholder="Yes"/></p>
+                  {%endif%}
+                    <p class="pright">Gender<br><input type="text" placeholder="{{user.gender}}"/></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
