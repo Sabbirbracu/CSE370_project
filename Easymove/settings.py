@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Home.apps.HomeConfig',
     'Dashboard.apps.DashboardConfig',
+    'Payment_Info.apps.PaymentInfoConfig',
+    'Bike_Station.apps.BikeStationConfig',
+    'MakeRide.apps.MakerideConfig',
+    'Adminpannel.apps.AdminpannelConfig',
+    'Rewards.apps.RewardsConfig',
 ]
 
 MIDDLEWARE = [

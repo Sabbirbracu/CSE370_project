@@ -17,9 +17,12 @@ def login_view(requests):
 
         if user is not None:
             login(requests, user)
-            u_mail = CustomUser.objects.raw("SELECT username, first_name FROM Home_customuser")
-            print(u_mail)
-            return redirect('dashboard')
+            # u_mail = CustomUser.objects.raw("SELECT username, first_name FROM Home_customuser")
+            # print(u_mail)
+            if user.user_type == "Admin":
+                return redirect("admin_dashboard")
+            else:
+                return redirect('dashboard')
         
         else:
             # Invalid credentials, show an error message

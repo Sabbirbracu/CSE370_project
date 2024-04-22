@@ -1,0 +1,20 @@
+<!-- timer.html -->
+{% extends 'home_html/base.html' %}
+{% block title %}Ride Time{% endblock title %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="/static/css/ride/timer.css">
+{% endblock link %}
+
+{% block body %}
+<div class="timer-container">
+    <h2>Counting your Ride</h2>
+    <div class="timer" id="stopwatch">00:00:00</div>
+    <form id="stop-ride-form" action="{% url 'stop_ride' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="elapsed_time" id="elapsed-time">
+        <input type="hidden" name="ride_id" value="{{ ride.pk }}">
+        <button type="button" id="stop-ride-btn">Stop Ride</button>
+    </form>
+</div>
+<script src="/static/js/timer/timer.js"></script> <!-- Include JavaScript file for stopwatch -->
+{% endblock body %}

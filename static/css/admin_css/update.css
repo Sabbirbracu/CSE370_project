@@ -1,0 +1,29 @@
+/* Style for Edit Button */
+.edit-btn {
+    display: inline-block;
+    padding: 8px 16px; /* Adjust padding as needed */
+    background-color: green;
+    color: white;
+    border-radius: 20px; /* This value makes it semi-oval. Adjust as needed */
+    text-decoration: none;
+}
+
+/* Hover effect for Edit Button */
+.edit-btn:hover {
+    background-color: darkgreen;
+}
+
+/* Style for Delete Button */
+.delete-btn {
+    display: inline-block;
+    padding: 8px 16px; /* Adjust padding as needed */
+    background-color: red;
+    color: white;
+    border-radius: 20px; /* This value makes it semi-oval. Adjust as needed */
+    text-decoration: none;
+}
+
+/* Hover effect for Delete Button */
+.delete-btn:hover {
+    background-color: darkred;
+}

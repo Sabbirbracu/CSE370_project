@@ -21,4 +21,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('Home.urls')),
     path('',include('Dashboard.urls')),
+    path('',include('Payment_Info.urls')),
+    path('',include('Bike_Station.urls')),
+    path('',include('MakeRide.urls')),
+    path('',include('Adminpannel.urls')),
+    path('',include('Rewards.urls'))
 ]
