@@ -5,6 +5,8 @@
 {%block link%}
 <link rel="stylesheet" href="/static/css/dashboard_css/style.css">
 <link rel="stylesheet" href="/static/css/station_css/station_style.css">
+<link rel="stylesheet" href="/static/css/admin_css/update.css">
+
 {%endblock link%}
 
 {%block body%}
@@ -38,9 +40,9 @@
                             {{ station.Station_Status }}
                         {% endif %}
                     </td>
-                    <td><a href="{% url 'edit_station' station.Station_ID %}">edit</a></td>
+                    <td><a class="edit-btn" href="{% url 'edit_station' station.Station_ID %}">edit</a></td>
 
-                    <td><a href="{% url 'delete_station' station.Station_ID %}">delete</a></td>
+                    <td><a class="delete-btn" href="{% url 'delete_station' station.Station_ID %}">delete</a></td>
 
                 </tr>
                 {% endfor %}

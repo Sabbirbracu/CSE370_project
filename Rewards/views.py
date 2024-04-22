@@ -1,11 +1,12 @@
 from django.shortcuts import render,HttpResponse
 from . models import Rewards,Payment_Info
+from django.db.models import Sum
 
 # Create your views here
 def rewards(request):
-    rewards = Rewards.objects.all()
+    user_points = request.user.rewards.aggregate(total_points=Sum('Points'))['total_points']
     context = {
-        'rewards': rewards,
+        'user_points': user_points,
         'page': "rewards"
         
     }
