@@ -36,13 +36,31 @@ def ride(request):
     return render(request,'ride/ride.html',{'page':page,'stations':stations})
 
 
+# views.py
+
+from django.shortcuts import render, redirect
+from django.http import JsonResponse
+from .models import Ride
+from datetime import datetime, timedelta
 def ride_time(request):
+    latest_ride = Ride.objects.latest('ride_id')
+    return render(request, 'ride/timer.html', {'ride': latest_ride})
+
+def stop_ride(request):
     if request.method == 'POST':
-        elapsed_time = request.POST.get('elapsedTime')
-        latest_ride = Ride.objects.latest('ride_id')
-        latest_ride.total_time=elapsed_time
-        latest_ride.save()
+        ride_id = request.POST.get('ride_id')
+        elapsed_time = request.POST.get('elapsed_time')
         
-    
-    page = "ride_time"
-    return render(request,'ride/ride_time.html',{'page':page})
+        # Convert elapsed time to minutes
+        hh, mm, ss = elapsed_time.split(':')
+        total_minutes = int(hh) * 60 + int(mm)
+
+        ride = Ride.objects.get(pk=ride_id)
+        print(total_minutes)
+        ride.total_time = total_minutes
+        ride.save()
+
+        # Redirect to the payment page
+        return redirect('payment')  # Replace 'payment' with the actual URL name for your payment page
+
+    return JsonResponse({'success': False})
