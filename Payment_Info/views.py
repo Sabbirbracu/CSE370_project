@@ -4,15 +4,16 @@ from django.views.decorators.cache import never_cache
 from MakeRide.models import Ride
 from .models import Payment_Info
 from Rewards.models import Rewards
-from django.db.models import Sum
 from django.contrib import messages
+from django.db.models import Sum
+
 
 @login_required
 @never_cache
 def payment(request):
     latest_ride = Ride.objects.latest('ride_id')
     total_time = latest_ride.total_time
-    cost_per_min = 5
+    cost_per_min = 300
     total_amount = total_time * cost_per_min
     origin_amount = total_amount 
     user_total_points = request.user.rewards.aggregate(total_points=Sum('Points'))['total_points']
@@ -44,9 +45,8 @@ def payment(request):
         reward.save()
         request.user.rewards.add(reward)
         
-        user_points = request.user.rewards.aggregate(total_points=Sum('Points'))['total_points']
         # print("User Total Points", user_points)
-        messages.success(request,"Your payment is Successfull !")
+        messages.success(request,"Your payment is Successfull.")
         return redirect("dashboard")
 
     page = "payment"
