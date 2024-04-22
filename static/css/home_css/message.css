@@ -1,11 +1,11 @@
 #successMessage {
     position: fixed;
-    top: 60px;
-    left: 81%;
+    top: 13px;
+    left: 70%;
     transform: translateX(-50%);
     background-color: #4CAF50;
     color: white;
-    font-size: 1.3em;
+    font-size:large;
     font-weight: 700;
     padding: 10px 10px;
     border-radius: 10px;

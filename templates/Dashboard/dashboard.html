@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="/static/css/dashboard_css/style.css">
 {%endblock link%}
 
-
 {%block body%}
 
 <main class="table">
@@ -17,10 +16,9 @@
             <thead>
                 <tr>
                     <th>User ID</th>
-                    <!-- <th>User</th> -->
                     <th>Ride Id</th>
                     <th>Pay_id</th>
-                    <th>initial Location</th>
+                    <th>Initial Location</th>
                     <th>Destination</th>
                     <th>Total time</th>
                     <th>Ride Date</th>
@@ -31,47 +29,23 @@
             </thead>
 
             <tbody>
-                <tr>
-                    <td>2401</td>
-                    <!-- <td><img src="/static/images/dashboard_img/u1.jpg" alt="">Shihab</td> -->
-                    <td>01</td>
-                    <td>1</td>
-                    <td>Banashree</td>
-                    <td>Rampura</td>
-                    <td>20min</td>
-                    <td>01-02-2024</td>
-                    <td>5 Taka</td>
-                    <td>100</td>
-                    <td>10</td>
-                </tr>
 
+                {% for ride in rides %}
                 <tr>
-                    <td>401</td>
-                    <!-- <td><img src="/static/images/dashboard_img/u1.jpg" alt="">Sabbir</td> -->
-                    <td>2</td>
-                    <td>1</td>
-                    <td>Banashree</td>
-                    <td>Rampura</td>
-                    <td>20min</td>
-                    <td>01-02-2024</td>
-                    <td>5 taka</td>
-                    <td>100</td>
-                    <td>10</td>
+                    <td>{{ ride.user.id }}</td>
+                    <td>{{ ride.ride_id }}</td>
+                    <td>{{ ride.payment_info.payment_id }}</td>
+                    <td>{{ ride.station_name }}</td>
+                    <td>{{ ride.destination }}</td>
+                    <td>{{ ride.total_time }}</td>
+                    <td>{{ ride.payment_info.date }}</td>
+                    <td>{{ ride.payment_info.cost_per_min }}</td>
+                    <td>{{ ride.payment_info.total_amount }}</td>
+                    <td>{{ ride.payment_info.rewards.Points }}</td>
                 </tr>
+                {% endfor %}
+                
 
-                <tr>
-                    <td>401</td>
-                    <!-- <td><img src="/static/images/dashboard_img/u1.jpg" alt="">Sajjad</td> -->
-                    <td>2</td>
-                    <td>1</td>
-                    <td>Banashree</td>
-                    <td>Rampura</td>
-                    <td>20min</td>
-                    <td>01-02-2024</td>
-                    <td>5 taka</td>
-                    <td>100</td>
-                    <td>10</td>
-                </tr>
 
             </tbody>
         </table>
