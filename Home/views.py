@@ -27,6 +27,8 @@ def login_view(requests):
     page = "login"
     return render(requests, 'home_html/login.html', {'page': page})
 
+def view_profile(request):
+    return render(request, 'view_profile/view_profile.html')
 
 def logout_view(request):
     logout(request)
