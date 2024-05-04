@@ -1,17 +1,17 @@
 {% extends 'home_html/base.html' %}
 {% block title %}Ride{% endblock title %}
 {% block link %}
-
+<link rel="stylesheet" href="/static/css/ride/ride.css">
 {% endblock link %}
 
 {% block body %}
 
 
-<div class="login-box">
+<div class="station-box">
     <h2>Ride Confirmation</h2>
     <form method="POST">
         {% csrf_token %}
-        <div class="first_box">
+        <div class="input-box">
             <label for="start_destination">Start Destination:</label>
             <select name="start_destination" id="start_destination" required>
                 <option value="">Select Start Destination</option>
@@ -21,7 +21,7 @@
             </select>
         </div>
 
-        <div class="second_box">
+        <div class="input-box">
             <label for="end_destination">End Destination:</label>
             <select name="end_destination" id="end_destination" required>
                 <option value="">Select Start Destination</option>
@@ -31,8 +31,18 @@
             </select>
         </div>
 
-        <input type="submit" value="SUBMIT">
+        <div class="btn_submit">
+            
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <!-- Submit -->
+            <input type="submit" value="Confirm">
+        </div>
     </form>
 </div>
 
 {% endblock body %}
+
+

@@ -69,6 +69,6 @@ def stop_ride(request):
         ride.save()
 
         # Redirect to the payment page
-        return redirect('payment')  # Replace 'payment' with the actual URL name for your payment page
+        return redirect('payment')  
 
     return JsonResponse({'success': False})
