@@ -8,6 +8,6 @@ class Ride(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     station_name = models.CharField(max_length=50)
     destination = models.CharField(max_length=50)
-    total_time = models.IntegerField(null=True,default=0)
+    total_time = models.FloatField(null=True,default=0)
     def __str__(self):
         return self.ride_id

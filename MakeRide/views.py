@@ -19,12 +19,12 @@ def ride(request):
         end_dest = request.POST.get('end_destination')
         # start_station = get_object_or_404(Bike_Station, Station_Name=start_dest)
 
-        start_station = Bike_Station.objects.get(Station_Name=start_dest)
-        get_station_id = start_station.pk
+        start_station_obj = Bike_Station.objects.get(Station_Name=start_dest)
+        get_station_id = start_station_obj.pk
         user_id = request.user.id
 
-        end_station = Bike_Station.objects.get(Station_Name =end_dest)
-        get_end_station_id = end_station.pk
+        end_station_obj = Bike_Station.objects.get(Station_Name =end_dest)
+        get_end_station_id = end_station_obj.pk
 
         # Check if both boxes have the same input
         if start_dest == end_dest:
@@ -32,12 +32,21 @@ def ride(request):
             messages.error(request, 'Opps! Please enter different destinations')
 
         else:
-            if start_station.Number_of_Bikes >= 1:
-                station_id = Bike_Station.objects.get(Station_ID=get_station_id)
-                ride = Ride(station_name=start_dest, destination=end_dest,user_id=user_id,station=station_id)
+            if start_station_obj.Number_of_Bikes >= 1:
+
+                start_station_id = Bike_Station.objects.get(Station_ID=get_station_id)
+                ride = Ride(station_name=start_dest, destination=end_dest,user_id=user_id,station=start_station_id)
                 ride.save()
+
                 Bike_Station.objects.filter(pk=get_station_id).update(Number_of_Bikes=F('Number_of_Bikes') - 1)
+                updated_start_station = Bike_Station.objects.get(pk=get_station_id)
+                if updated_start_station.Number_of_Bikes < 1:
+                    Bike_Station.objects.filter(pk=get_station_id).update(Station_Status = "Unavailable")
+
                 Bike_Station.objects.filter(pk=get_end_station_id).update(Number_of_Bikes=F('Number_of_Bikes') + 1)
+                updated_end_station = Bike_Station.objects.get(pk=get_end_station_id)
+                if updated_end_station.Number_of_Bikes > 0:
+                    Bike_Station.objects.filter(pk=get_end_station_id).update(Station_Status = "Available")
                 return redirect("ride_time")
             else:
                 messages.error(request,f'Opps! {start_dest} station is curently unavailable')
@@ -61,10 +70,11 @@ def stop_ride(request):
         
         # Convert elapsed time to minutes
         hh, mm, ss = elapsed_time.split(':')
-        total_minutes = int(hh) * 60 + int(mm)
+        print(hh,mm,ss)
+        minutes = int(hh) * 60 + int(mm) + float(int(ss)/60)
+        total_minutes = round(minutes,2)
 
         ride = Ride.objects.get(pk=ride_id)
-        print(total_minutes)
         ride.total_time = total_minutes
         ride.save()
 
